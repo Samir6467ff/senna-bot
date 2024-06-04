@@ -1,13 +1,5 @@
-
-import yts from 'yt-search';
 let handler = async (m, { conn, usedPrefix, text, args, command }) => {
-    if (!text) throw `✳️ ${mssg.example} *${usedPrefix + command}* Lil Peep hate my life`;
-    m.react('📀');
     
-    let result = await yts(text);
-    let ytres = result.videos;
-    
-
     let listSections = [];
     for (let index in ytres) {
         let v = ytres[index];
