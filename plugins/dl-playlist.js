@@ -1,7 +1,7 @@
 let handler = async (m, { conn, usedPrefix, text, args, command }) => {
     
     let listSections = [];
-    for (let index in ytres) {
+    for {
         let v = ytres[index];
         listSections.push({
             title: `${index}┃ ${v.title}`,
