@@ -2,11 +2,11 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
     conn.relayMessage(m.chat, {
       viewOnceMessage: {
         message: {
-          imageMessage: {
+          interactiveMessage: {
+            imageMessage: {
             url: 'https://telegra.ph/file/11d8f4ee53b8dd9fe80c6.jpg'
           },
-          interactiveMessage: {
-            header: {
+              header: {
               title: '*قـائـمـة الـاوامــر*'
             },
             body: {
