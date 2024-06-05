@@ -1,5 +1,6 @@
 let handler = async (m, { conn, args, usedPrefix, command }) => {
-    conn.relayMessage(m.chat, {
+let pp = './src/fg_logo.jpg'    
+    conn.relayMessage(m.chat, pp, {
       viewOnceMessage: {
         message: {
           interactiveMessage: {
