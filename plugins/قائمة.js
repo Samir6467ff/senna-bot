@@ -3,7 +3,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
       viewOnceMessage: {
         message: {
           imageMessage: {
-            url: `https://harakat.ams3.digitaloceanspaces.com/harakat_sticker/logo/logo.png`
+            url: 'https://harakat.ams3.digitaloceanspaces.com/harakat_sticker/logo/logo.png'
           },
           interactiveMessage: {
             header: {
