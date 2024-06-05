@@ -2,6 +2,9 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
     conn.relayMessage(m.chat, {
       viewOnceMessage: {
         message: {
+          imageMessage: {
+            url: `https://harakat.ams3.digitaloceanspaces.com/harakat_sticker/logo/logo.png`
+          },
           interactiveMessage: {
             header: {
               title: '*قـائـمـة الـاوامــر*'
