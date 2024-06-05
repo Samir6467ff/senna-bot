@@ -5,7 +5,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
           interactiveMessage: {
               header: {
               title: '*قـائـمـة الـاوامــر*',
-              imageMessage: {
+              image: 
               url: 'https://telegra.ph/file/11d8f4ee53b8dd9fe80c6.jpg'
            },
             body: {
