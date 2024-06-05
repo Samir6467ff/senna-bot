@@ -4,9 +4,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
         message: {
           interactiveMessage: {
               header: {
-              title: '*قـائـمـة الـاوامــر*',
-              image: 
-              url: 'https://telegra.ph/file/11d8f4ee53b8dd9fe80c6.jpg'
+              title: '*قـائـمـة الـاوامــر*'
            },
             body: {
               text: '🛡️ افتح القائمة بواسطة الزر\n⚡ لا تلعب كثير في القائمة'
