@@ -52,8 +52,3 @@ handler.tags = ['main']
 handler.command = ['قايمه']
 
 export default handler
-
-
-`ملحوظة الكود منقول من قناة ميجو` 
-
-> ROPERTO🇪🇬
