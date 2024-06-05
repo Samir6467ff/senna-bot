@@ -3,12 +3,11 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
       viewOnceMessage: {
         message: {
           interactiveMessage: {
-            imageMessage: {
-            url: 'https://telegra.ph/file/11d8f4ee53b8dd9fe80c6.jpg'
-          },
               header: {
-              title: '*قـائـمـة الـاوامــر*'
-            },
+              title: '*قـائـمـة الـاوامــر*',
+              imageMessage: {
+              url: 'https://telegra.ph/file/11d8f4ee53b8dd9fe80c6.jpg'
+           },
             body: {
               text: '🛡️ افتح القائمة بواسطة الزر\n⚡ لا تلعب كثير في القائمة'
             },
