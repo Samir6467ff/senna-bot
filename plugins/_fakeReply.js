@@ -1,9 +1,9 @@
 
 import fetch from 'node-fetch';
 export async function before(m, { conn }) {
-   let pp = await this.profilePictureUrl(m.sender, 'image').catch(_ => 'https://i.ibb.co/1ZxrXKJ/avatar-contact.jpg');
+   let pp = await this.profilePictureUrl(m.sender, 'image').catch(_ => 'https://telegra.ph/file/11d8f4ee53b8dd9fe80c6.jpg');
 
-  let nam = "✨  FG98 - FGMODS  ✨"
+  let nam = "✨  𝑴𝒊𝒓𝒛𝒂 𝑩𝒐𝒕  ✨"
   
   // Respuesta con enlace de WhatsApp
   global.rpl = {
@@ -40,7 +40,7 @@ export async function before(m, { conn }) {
         mediaType: 'VIDEO',
         description: 'canal del grupo',
         title: packname,
-        body: 'Canal de FG98',
+        body: 'تابع قناة البوت',
         thumbnailUrl: pp,
         sourceUrl: fgcanal
       }
