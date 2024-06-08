@@ -3,7 +3,6 @@ const { generateWAMessageFromContent, proto } = pkg
 
 var handler = async (m, { conn, usedPrefix }) => {
 
-  let users = await conn.fetchBlocklist()
   
   let msg = generateWAMessageFromContent(m.chat, {
     viewOnceMessage: {
