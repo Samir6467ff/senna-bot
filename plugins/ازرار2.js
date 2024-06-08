@@ -1,6 +1,3 @@
-
-users = await conn.fetchBlocklist()
-
 import pkg from '@whiskeysockets/baileys';
 const { generateWAMessageFromContent, proto } = pkg
 
