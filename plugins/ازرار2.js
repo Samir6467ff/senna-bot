@@ -1,8 +1,5 @@
-import pkg from  @whiskeysockets/baileys ;
-const { generateWAMessageFromContent, proto } = pkg
-
 var handler = async (m, { conn, usedPrefix }) => {
-
+ 
 let msg = generateWAMessageFromContent(m.chat, {
   viewOnceMessage: {
     message: {
@@ -12,22 +9,25 @@ let msg = generateWAMessageFromContent(m.chat, {
         },
         interactiveMessage: proto.Message.InteractiveMessage.create({
           body: proto.Message.InteractiveMessage.Body.create({
-            text: "𝑴𝒊𝒓𝒛𝒂 𝑩𝒐t"
+            text: ``
           }),
           footer: proto.Message.InteractiveMessage.Footer.create({
-            text: "𝑴𝒊𝒓𝒛𝒂 𝑩𝒐t"
+            text: "𝑴𝒊𝒓𝒛𝒂 𝑩𝒐𝒕"
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-            title: "𝑴𝒊𝒓𝒛𝒂 𝑩𝒐t",
-            subtitle: "test",
-            imageUrl: "https://i.ibb.co/hGkN1tL/IMG-20230221-WA0003.jpg",
-            hasMediaAttachment: true
+            title: `*━⊱│✫ -『 𝑴𝒊𝒓𝒛𝒂 𝑩𝒐𝒕 』- ✫│⊱━*\n 
+        *𝑾𝒆 𝒔𝒕𝒂𝒏𝒅 𝒘𝒊𝒕𝒉 𝒑𝒂𝒍𝒂𝒔𝒕𝒊𝒏𝒆🇵🇸*
+ ╭━━━━⊱『 *𝑴𝒊𝒓𝒛𝒂* 』⊱━━━━━╮
+> *👋🏻 مرحباَ:* ${m.pushName}\n> *👥 عدد المستخدمين:* *%totalreg*\n> *🟢 وقت النشاط:* %muptime
+╯━━━━━━━━━━━━━━━━━╰`,
+            subtitle: "text",
+            hasMediaAttachment: false
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [
               {
                 "name": "single_select",
-                "buttonParamsJson": "{\"title\":\"القوائم 📑\",\"sections\":[{\"title\":\"𝑴𝒊𝒓𝒛𝒂 𝑩𝒐t\",\"highlight_label\":\"𝑴𝒊𝒓𝒛𝒂 𝑩𝒐t\",\"rows\":[{\"header\":\"header\",\"title\":\"title\",\"description\":\"description\",\"id\":\"id\"},{\"header\":\"header\",\"title\":\"title\",\"description\":\"description\",\"id\":\"id\"}]}]}"
+                "buttonParamsJson": "{\"title\":\"القوائم 📑\",\"sections\":[{\"title\":\"𝑴𝒊𝒓𝒛𝒂 𝑩𝒐𝒕\",\"highlight_label\":\"𝑴𝒊ܪ𝒛𝒂 𝑩𝒐ت\",\"rows\":[{\"header\":\"header\",\"title\":\"title\",\"description\":\"description\",\"id\":\"id\"},{\"header\":\"header\",\"title\":\"title\",\"description\":\"description\",\"id\":\"id\"},{\"header\":\"header\",\"title\":\"title\",\"description\":\"description\",\"id\":\"id\"}]}]}"
               },
               {
                 "name": "quick_reply",
