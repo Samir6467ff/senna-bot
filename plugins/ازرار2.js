@@ -3,8 +3,6 @@ const { generateWAMessageFromContent, proto } = pkg
 
 var handler = async (m, { conn, usedPrefix }) => {
 
-let pp = ('https://telegra.ph/file/11d8f4ee53b8dd9fe80c6.jpg');
-
 let msg = generateWAMessageFromContent(m.chat, {
  viewOnceMessage: {
  message: {
