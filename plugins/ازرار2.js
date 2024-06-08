@@ -1,13 +1,10 @@
 import pkg from '@whiskeysockets/baileys';
 const { generateWAMessageFromContent, proto } = pkg
-import { uptime } from '@baileys/core';
 
 var handler = async (m, { conn, usedPrefix }) => {
 
   let users = await conn.fetchBlocklist()
-  let uptimeMs = uptime()
-  let uptimeText = (uptimeMs / 1000 / 60 / 60).toFixed(2) + ' hours'
-
+  
   let msg = generateWAMessageFromContent(m.chat, {
     viewOnceMessage: {
       message: {
