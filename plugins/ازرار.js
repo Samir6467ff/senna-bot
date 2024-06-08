@@ -42,8 +42,8 @@ let msg = generateWAMessageFromContent(m.chat, {
     }
   }
 }, {})
-
-await conn.relayMessage(msg.key.remoteJid, msg.message, { messageId: msg.key.id })
+let pp = './src/fg_logo.jpg'
+await conn.relayMessage(msg.key.remoteJid, msg.message, { messageId: msg.key.id }, pp)
 
 }
 handler.command = /^(ميرزا)$/i
