@@ -3,7 +3,7 @@ const { generateWAMessageFromContent, proto } = pkg
 
 var handler = async (m, { conn, usedPrefix }) => {
 
-let imagePath = '/src/fg_logo.jpg'; // مسار الصورة
+let pp = await this.profilePictureUrl(m.sender, 'image').catch(_ => 'https://telegra.ph/file/11d8f4ee53b8dd9fe80c6.jpg');
 
 let msg = generateWAMessageFromContent(m.chat, {
  viewOnceMessage: {
@@ -23,7 +23,7 @@ let msg = generateWAMessageFromContent(m.chat, {
  title: "𝑴𝒊𝒓𝒛𝒂 𝑩𝒐𝒕",
  subtitle: "test",
  hasMediaAttachment: false, // تم تعديل هنا لتفعيل عرض الصورة
- mediaUrl: imagePath // تم تعديل هنا لتحديد مسار الصورة
+ mediaUrl: pp // تم تعديل هنا لتحديد مسار الصورة
  }),
  nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
  buttons: [
