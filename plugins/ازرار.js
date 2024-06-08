@@ -20,7 +20,7 @@ let msg = generateWAMessageFromContent(m.chat, {
           header: proto.Message.InteractiveMessage.Header.create({
             title: "𝑴𝒊𝒓𝒛𝒂 𝑩𝒐𝒕",
             subtitle: "test",
-            hasMediaAttachment: false
+            hasMediaAttachment: true
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [
