@@ -30,11 +30,11 @@ let msg = generateWAMessageFromContent(m.chat, {
               },
               {
                 "name": "quick_reply",
-                "buttonParamsJson": "{\"display_text\":\"quick_reply\",\"id\":\"message\"}"
+                "buttonParamsJson": "{\"display_text\":\"المطور\",\"id\":\"owner\"}"
               },
               {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"url\",\"url\":\"https://www.google.com\",\"merchant_url\":\"https://www.google.com\"}"
+                 "buttonParamsJson": "{\"display_text\":\"قناتنا\",\"url\":\"https://www.google.com\",\"merchant_url\":\"https://www.google.com\"}"
               },
            ],
           })
