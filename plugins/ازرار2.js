@@ -27,7 +27,7 @@ let msg = generateWAMessageFromContent(m.chat, {
             subtitle: "text",
             hasMediaAttachment: true,
             mediaUrl: "https://telegra.ph/file/11d8f4ee53b8dd9fe80c6.jpg",
-            mediaCaption: `Merhaba${msg.message.viewOnceMessage.message.imageMessage.caption || ""}`
+            mediaCaption: `Merhaba`
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [
