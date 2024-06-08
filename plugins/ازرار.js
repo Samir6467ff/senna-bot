@@ -12,7 +12,7 @@ let msg = generateWAMessageFromContent(m.chat, {
         },
         interactiveMessage: proto.Message.InteractiveMessage.create({
           body: proto.Message.InteractiveMessage.Body.create({
-            text: "test"
+            text: "𝑴𝒊𝒓𝒛𝒂 𝑩𝒐𝒕"
           }),
           footer: proto.Message.InteractiveMessage.Footer.create({
             text: "𝑴𝒊𝒓𝒛𝒂 𝑩𝒐𝒕"
@@ -30,7 +30,7 @@ let msg = generateWAMessageFromContent(m.chat, {
               },
               {
                 "name": "quick_reply",
-                "buttonParamsJson": "{\"display_text\":\"المطور\",\"id\":\"owner\"}"
+                "buttonParamsJson": "{\"display_text\":\"المطور\",\"id\":\".owner\"}"
               },
               {
                  "name": "cta_url",
@@ -46,6 +46,6 @@ let msg = generateWAMessageFromContent(m.chat, {
 await conn.relayMessage(msg.key.remoteJid, msg.message, { messageId: msg.key.id })
 
 }
-handler.command = /^(mboton)$/i
+handler.command = /^(ميرزا)$/i
 
 export default handler
