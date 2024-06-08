@@ -18,7 +18,7 @@ let msg = generateWAMessageFromContent(m.chat, {
             text: "test"
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-            title: "test",
+            title: "𝑴𝒊𝒓𝒛𝒂 𝑩𝒐𝒕",
             subtitle: "test",
             hasMediaAttachment: false
           }),
