@@ -18,8 +18,12 @@ let msg = generateWAMessageFromContent(m.chat, {
             text: "𝑴𝒊𝒓𝒛𝒂 𝑩𝒐𝒕"
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-            title: "ميرزا",
-            subtitle: "*👋🏻 مرحباَ:* *%name*",
+            title: `*━⊱│✫ -『 𝑴𝒊𝒓𝒛𝒂 𝑩𝒐𝒕 』- ✫│⊱━*\n 
+        *𝑾𝒆 𝒔𝒕𝒂𝒏𝒅 𝒘𝒊𝒕𝒉 𝒑𝒂𝒍𝒂𝒔𝒕𝒊𝒏𝒆🇵🇸*
+ ╭━━━━⊱『 *𝑴𝒊𝒓𝒛𝒂* 』⊱━━━━━╮
+> *👋🏻 مرحباَ:* *%name*\n> *👥 عدد المستخدمين:* *%totalreg*\n> *🟢 وقت النشاط:* %muptime
+╯━━━━━━━━━━━━━━━━━╰`,
+            subtitle: "text",
             hasMediaAttachment: false
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
