@@ -1,12 +1,10 @@
+import fs from 'fs';
 import pkg from '@whiskeysockets/baileys';
-import fs from 'fs'; 
 const { generateWAMessageFromContent, proto } = pkg
 
 var handler = async (m, { conn, usedPrefix }) => {
 
-let vn = fs.readFileSync('./path/to/image.jpg')
-let vn = 'https://telegra.ph/file/11d8f4ee53b8dd9fe80c6.jpg'
-let vn = Buffer.from('...') // ويمكن أيضًا استخدام دالة base64 لترميز الصورة
+let vn = fs.readFileSync('./src/fg_logo.jpg')
 
 let msg = generateWAMessageFromContent(m.chat, {
   viewOnceMessage: {
@@ -35,7 +33,7 @@ let msg = generateWAMessageFromContent(m.chat, {
             buttons: [
               {
                 "name": "single_select",
-                "buttonParamsJson": "{\"title\":\"القوائم 📑\",\"sections\":[{\"title\":\"𝑴𝒊𝒓𝒛𝒂 𝑩𝒐𝒕\",\"highlight_label\":\"𝑴𝒊𝒓𝒛𝒂 𝑩𝒐𝒕\",\"rows\":[{\"header\":\"header\",\"title\":\"title\",\"description\":\"description\",\"id\":\"id\"},{\"header\":\"header\",\"title\":\"title\",\"description\":\"description\",\"id\":\"id\"},{\"header\":\"header\",\"title\":\"title\",\"description\":\"description\",\"id\":\"id\"}]}]}"
+                "buttonParamsJson": "{\"title\":\"القوائم 📑\",\"sections\":[{\"title\":\"𝑴𝒊𝒓𝒛𝒂 𝑩𝒐𝒕\",\"highlight_label\":\"𝑴𝒊𝒓𝒛𝒂 𝑩𝒐ت\",\"rows\":[{\"header\":\"header\",\"title\":\"title\",\"description\":\"description\",\"id\":\"id\"},{\"header\":\"header\",\"title\":\"title\",\"description\":\"description\",\"id\":\"id\"},{\"header\":\"header\",\"title\":\"title\",\"description\":\"description\",\"id\":\"id\"}]}]}"
               },
               {
                 "name": "quick_reply",
