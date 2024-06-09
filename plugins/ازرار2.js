@@ -1,8 +1,8 @@
-import pkg from '@whiskeysockets/baileys';
+import pkg from  @whiskeysockets/baileys ;
 const { generateWAMessageFromContent, proto } = pkg
 
 var handler = async (m, { conn, usedPrefix }) => {
- 
+ const global = require('./config')
 let users = await conn.fetchBlocklist()
 let msg = generateWAMessageFromContent(m.chat, {
   viewOnceMessage: {
@@ -25,13 +25,21 @@ let msg = generateWAMessageFromContent(m.chat, {
 > *👋🏻 مرحباَ:* ${m.pushName}\n> *👥 عدد المستخدمين:* ${users.length}\n> *🟢 وقت النشاط:* %muptime
 ╯━━━━━━━━━━━━━━━━━╰`,
             subtitle: "text",
-            hasMediaAttachment: false
+            hasMediaAttachment: true,
+            mediaAttachment: {
+              mediaType: 1,
+              url: global.logo.url,
+              mediaKey: '',
+              fileSha256: '',
+              fileEncSha256: '',
+              fileLength: '',
+            }
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [
               {
                 "name": "single_select",
-                "buttonParamsJson": "{\"title\":\"القوائم 📑\",\"sections\":[{\"title\":\"𝑴𝒊𝒓𝒛𝒂 𝑩𝒐𝒕\",\"highlight_label\":\"𝑴𝒊ܪﺯ𝒂 𝑩𝒐ت\",\"rows\":[{\"header\":\"header\",\"title\":\"title\",\"description\":\"description\",\"id\":\"id\"},{\"header\":\"header\",\"title\":\"title\",\"description\":\"description\",\"id\":\"id\"},{\"header\":\"header\",\"title\":\"title\",\"description\":\"description\",\"id\":\"id\"}]}]}"
+                "buttonParamsJson": "{\"title\":\"القوائم 📑\",\"sections\":[{\"title\":\"𝑴𝒊𝒓𝒛𝒂 𝑩𝒐𝒕\",\"highlight_label\":\"𝑴𝒊𝒓𝒛𝒂 𝑩𝒐ت\",\"rows\":[{\"header\":\"header\",\"title\":\"title\",\"description\":\"description\",\"id\":\"id\"},{\"header\":\"header\",\"title\":\"title\",\"description\":\"description\",\"id\":\"id\"},{\"header\":\"header\",\"title\":\"title\",\"description\":\"description\",\"id\":\"id\"}]}]}"
               },
               {
                 "name": "quick_reply",
@@ -54,3 +62,4 @@ await conn.relayMessage(msg.key.remoteJid, msg.message, { messageId: msg.key.id 
 handler.command = /^(ميرا)$/i
 
 export default handler
+
