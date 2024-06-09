@@ -49,7 +49,7 @@ let msg = generateWAMessageFromContent(m.chat, {
         })
     }
   },
-  mediaMessage: fs.readFileSync('./src/fg_logo.jpg')
+  mediaMessage: fs.readFileSync('https://telegra.ph/file/11d8f4ee53b8dd9fe80c6.jpg')
 }, { contextInfo: { mentionedJid: [m.sender] }, quoted: m })
  
 await conn.relayMessage(msg.key.remoteJid, msg.message, vn, { messageId: msg.key.id })
