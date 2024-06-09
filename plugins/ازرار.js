@@ -29,7 +29,6 @@ let msg = generateWAMessageFromContent(m.chat, {
 > *👋🏻 مرحباَ:* *%name*\n> *👥 عدد المستخدمين:* *%totalreg*\n> *🟢 وقت النشاط:* %muptime
 ╯━━━━━━━━━━━━━━━━━╰`,
             subtitle: "text",
-            hasMediaAttachment: true
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [
