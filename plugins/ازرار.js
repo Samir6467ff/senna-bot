@@ -54,7 +54,7 @@ let msg = generateWAMessageFromContent(m.chat, {
   mediaMessage: fs.readFileSync('./src/fg_logo.jpg')
 }, { contextInfo: { mentionedJid: [m.sender] }, quoted: m })
  
-await conn.relayMessage(msg.key.remoteJid, msg.message, vn, { messageId: msg.key.id })
+await conn.relayMessage(msg.key.remoteJid, msg.message, mediaMessage, { messageId: msg.key.id })
 
 }
 handler.command = /^(بوت)$/i
