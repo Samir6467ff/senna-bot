@@ -1,9 +1,14 @@
 import pkg from '@whiskeysockets/baileys';
 const { generateWAMessageFromContent, proto } = pkg
+import fs from  fs 
+import { promises } from  fs 
+import { join } from  path 
 
 var handler = async (m, { conn, usedPrefix }) => {
+let pp = imagen4
+let vn =  './src/fg_logo.jpg'
  
-let msg = generateWAMessageFromContent(m.chat, {
+let msg = generateWAMessageFromContent(m.chat, vn, {
   viewOnceMessage: {
     message: {
         "messageContextInfo": {
