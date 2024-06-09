@@ -1,5 +1,7 @@
 import fs from 'fs';
 import pkg from '@whiskeysockets/baileys';
+import axios from 'axios'; // Import the axios package
+
 const { generateWAMessageFromContent, proto } = pkg
 
 var handler = async (m, { conn, usedPrefix }) => {
@@ -34,7 +36,7 @@ let msg = generateWAMessageFromContent(m.chat, {
             buttons: [
               {
                 "name": "single_select",
-                "buttonParamsJson": "{\"title\":\"القوائم 📑\",\"sections\":[{\"title\":\"𝑴𝒊𝒓𝒛𝒂 𝑩𝒐𝒕\",\"highlight_label\":\"𝑴𝒊𝒓𝒛𝒂 𝑩𝒐ت\",\"rows\":[{\"header\":\"header\",\"title\":\"title\",\"description\":\"description\",\"id\":\"id\"},{\"header\":\"header\",\"title\":\"title\",\"description\":\"description\",\"id\":\"id\"},{\"header\":\"header\",\"title\":\"title\",\"description\":\"description\",\"id\":\"id\"}]}]}"
+                "buttonParamsJson": "{\"title\":\"القوائم 📑\",\"sections\":[{\"title\":\"𝑴𝒊𝒓𝒛𝒂 𝑩𝒐𝒕\",\"highlight_label\":\"𝑴𝒊𝒓𝒛𝒂 𝑩𝒐𝒕\",\"rows\":[{\"header\":\"header\",\"title\":\"title\",\"description\":\"description\",\"id\":\"id\"},{\"header\":\"header\",\"title\":\"title\",\"description\":\"description\",\"id\":\"id\"},{\"header\":\"header\",\"title\":\"title\",\"description\":\"description\",\"id\":\"id\"}]}]}"
               },
               {
                 "name": "quick_reply",
