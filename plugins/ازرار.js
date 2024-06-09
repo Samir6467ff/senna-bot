@@ -2,8 +2,11 @@ import pkg from '@whiskeysockets/baileys';
 const { generateWAMessageFromContent, proto } = pkg
 
 var handler = async (m, { conn, usedPrefix }) => {
-let vn =  "https://telegra.ph/file/11d8f4ee53b8dd9fe80c6.jpg"
- 
+
+let vn = fs.readFileSync('./path/to/image.jpg')
+let vn = 'https://telegra.ph/file/11d8f4ee53b8dd9fe80c6.jpg'
+let vn = Buffer.from('...') // ويمكن أيضًا استخدام دالة base64 لترميز الصورة
+
 let msg = generateWAMessageFromContent(m.chat, {
   viewOnceMessage: {
     message: {
