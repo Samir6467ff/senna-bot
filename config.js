@@ -30,7 +30,7 @@ global.fgsc = 'https://github.com/FG98F/dylux-fg'
 global.fgyt = 'https://youtube.com/fg98f'
 global.fgpyp = 'https://paypal.me/fg98f'
 global.fglog = 'https://i.ibb.co/1zdz2j3/logo.jpgs' 
-global.logo = { url: 'https://telegra.ph/file/11d8f4ee53b8dd9fe80c6.jpg' }
+global.imagen4 = fs.readFileSync('./src/fg_logo.jpg');
 
 //--- Grupos WA
 global.id_canal = '120363287489532700@newsletter' //-ID de canal de WhatsApp
