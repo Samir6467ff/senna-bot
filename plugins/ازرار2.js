@@ -2,7 +2,7 @@ import pkg from  '@whiskeysockets/baileys' ;
 const { generateWAMessageFromContent, proto } = pkg
 
 var handler = async (m, { conn, usedPrefix }) => {
- const global = require('./config')
+ const global = ('./config')
 let users = await conn.fetchBlocklist()
 let msg = generateWAMessageFromContent(m.chat, {
   viewOnceMessage: {
