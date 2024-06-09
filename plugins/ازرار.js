@@ -23,21 +23,17 @@ var handler = async (m, { conn, usedPrefix }) => {
         }
       },
       footer: proto.Message.InteractiveMessage.Footer.create({
-        text: "𝑴𝒊𝒓𝒛𝒂 𝑩𝒐𝒕"
+        text: "*𝐌𝐢𝐫𝐳𝐚 𝐁𝐨𝐭*"
       }),
       header: proto.Message.InteractiveMessage.Header.create({
-        title: `*━⊱│✫ -『 𝑴𝒊𝒓𝒛𝒂 𝑩𝒐𝒕 』- ✫│⊱━*\n 
-        *𝑾𝒆 𝒔𝒕𝒂𝒏𝒅 𝒘𝒊𝒕𝒉 𝒑𝒂𝒍𝒂𝒔𝒕𝒊𝒏𝒆🇵🇸*
- ╭━━━━⊱『 *𝑴𝒊𝒓𝒛𝒂* 』⊱━━━━━╮
-> *👋🏻 مرحباَ:* *%name*\n> *👥 عدد المستخدمين:* *%totalreg*\n> *🟢 وقت النشاط:* %muptime
-╯━━━━━━━━━━━━━━━━━╰`,
-        subtitle: "text",
+        title: "*─═══════『 𝐌𝐢𝐫𝐳𝐚 𝐁𝐨𝐭 』═══════*\n*We stand with palastine🇵🇸*\n\n╭━━━━⊱『 *𝐌𝐢𝐫𝐳𝐚* 』⊱━━━━━╮\n> *👋🏻 مرحباَ:* *%name*\n> *👥 عدد المستخدمين:* *%totalreg*\n> *🟢 وقت النشاط:* %muptime\n╯━━━━━━━━━━━━━━━━━╰",
+        subtitle: "text"
       }),
       nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
         buttons: [
           {
             "name": "single_select",
-            "buttonParamsJson": "{\"title\":\"القوائم 📑\",\"sections\":[{\"title\":\"𝑴𝒊𝒓𝒛𝒂 𝑩𝒐ット\",\"highlight_label\":\"𝑴𝒊𝒓𝒛𝒂 𝑩𝒐ット\",\"rows\":[{\"header\":\"header\",\"title\":\"title\",\"description\":\"description\",\"id\":\"id\"},{\"header\":\"header\",\"title\":\"title\",\"description\":\"description\",\"id\":\"id\"},{\"header\":\"header\",\"title\":\"title\",\"description\":\"description\",\"id\":\"id\"}]}]}"
+            "buttonParamsJson": "{\"title\":\"القوائم 📑\",\"sections\":[{\"title\":\"𝐌𝐢𝐫𝐳𝐚 𝐁𝐨𝐭\",\"highlight_label\":\"𝐌𝐢𝐫𝐳𝐚 𝐁𝐨𝐭\",\"rows\":[{\"header\":\"header\",\"title\":\"title\",\"description\":\"description\",\"id\":\"id\"},{\"header\":\"header\",\"title\":\"title\",\"description\":\"description\",\"id\":\"id\"},{\"header\":\"header\",\"title\":\"title\",\"description\":\"description\",\"id\":\"id\"}]}]}"
           },
           {
             "name": "quick_reply",
