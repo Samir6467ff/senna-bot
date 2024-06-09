@@ -6,7 +6,7 @@ const { generateWAMessageFromContent, proto } = pkg
 
 var handler = async (m, { conn, usedPrefix }) => {
 
-let mediaMessage = fs.readFileSync('./src/fg_logo.jpg')
+let mediaMessage = await axios.get('https://telegra.ph/file/11d8f4ee53b8dd9fe80c6.jpg') // Replace with your own image URL
 
 let msg = generateWAMessageFromContent(m.chat, {
   viewOnceMessage: {
@@ -18,7 +18,7 @@ let msg = generateWAMessageFromContent(m.chat, {
         interactiveMessage: proto.Message.InteractiveMessage.create({
           body: proto.Message.InteractiveMessage.Body.create({
             image: proto.Message.ImageMessage.create({
-              url: 'https://telegra.ph/file/11d8f4ee53b8dd9fe80c6.jpg'
+              url: mediaMessage.data.url
             })
           }),
           footer: proto.Message.InteractiveMessage.Footer.create({
@@ -51,10 +51,10 @@ let msg = generateWAMessageFromContent(m.chat, {
         })
     }
   },
-  mediaMessage: fs.readFileSync('./src/fg_logo.jpg')
+  mediaMessage: mediaMessage.data.mediaMessage
 }, { contextInfo: { mentionedJid: [m.sender] }, quoted: m })
  
-await conn.relayMessage(msg.key.remoteJid, msg.message, mediaMessage, { messageId: msg.key.id })
+await conn.relayMessage(msg.key.remoteJid, msg.message, mediaMessage.data, { messageId: msg.key.id })
 
 }
 handler.command = /^(بوت)$/i
