@@ -1,4 +1,5 @@
 import pkg from '@whiskeysockets/baileys';
+import fs from 'fs'; 
 const { generateWAMessageFromContent, proto } = pkg
 
 var handler = async (m, { conn, usedPrefix }) => {
