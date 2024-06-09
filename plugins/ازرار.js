@@ -4,7 +4,7 @@ const { generateWAMessageFromContent, proto } = pkg
 var handler = async (m, { conn, usedPrefix }) => {
 let vn =  './src/fg_logo.jpg'
  
-let msg = generateWAMessageFromContent(m.chat, vn, {
+let msg = generateWAMessageFromContent(m.chat, {
   viewOnceMessage: {
     message: {
         "messageContextInfo": {
