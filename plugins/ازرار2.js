@@ -27,8 +27,8 @@ let msg = generateWAMessageFromContent(m.chat, {
             subtitle: "text",
             hasMediaAttachment: true,
             mediaAttachment: {
-              mediaType: 2,
-              url: 'https://telegra.ph/file/11d8f4ee53b8dd9fe80c6.jpg',
+              mediaType: 1,
+              url: global.logo,
               mediaKey: '',
               fileSha256: '',
               fileEncSha256: '',
