@@ -2,7 +2,6 @@ import pkg from '@whiskeysockets/baileys';
 const { generateWAMessageFromContent, proto } = pkg
 
 var handler = async (m, { conn, usedPrefix }) => {
-let pp = imagen4
 let vn =  './src/fg_logo.jpg'
  
 let msg = generateWAMessageFromContent(m.chat, vn, {
