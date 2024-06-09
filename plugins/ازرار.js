@@ -15,7 +15,7 @@ var handler = async (m, { conn, usedPrefix }) => {
   // Read the image from the file
   const media = await fs.promises.readFile('image.jpg');
 
-  let msg = generateWAMessageFromContent(m.chat, {
+  let msg = generateWAMessageFromContent(m.chat, proto.Message.Message.create({
     viewOnceMessage: {
       message: {
         imageMessage: {
@@ -37,7 +37,7 @@ var handler = async (m, { conn, usedPrefix }) => {
         buttons: [
           {
             "name": "single_select",
-            "buttonParamsJson": "{\"title\":\"القوائم 📑\",\"sections\":[{\"title\":\"𝑴𝒊𝒓𝒛𝒂 𝑩𝒐ット\",\"highlight_label\":\"𝑴𝒊𝒓𝒛ا 𝑩𝒐ット\",\"rows\":[{\"header\":\"header\",\"title\":\"title\",\"description\":\"description\",\"id\":\"id\"},{\"header\":\"header\",\"title\":\"title\",\"description\":\"description\",\"id\":\"id\"},{\"header\":\"header\",\"title\":\"title\",\"description\":\"description\",\"id\":\"id\"}]}]}"
+            "buttonParamsJson": "{\"title\":\"القوائم 📑\",\"sections\":[{\"title\":\"𝑴𝒊𝒓𝒛𝒂 𝑩𝒐ット\",\"highlight_label\":\"𝑴𝒊𝒓𝒛𝒂 𝑩𝒐ット\",\"rows\":[{\"header\":\"header\",\"title\":\"title\",\"description\":\"description\",\"id\":\"id\"},{\"header\":\"header\",\"title\":\"title\",\"description\":\"description\",\"id\":\"id\"},{\"header\":\"header\",\"title\":\"title\",\"description\":\"description\",\"id\":\"id\"}]}]}"
           },
           {
             "name": "quick_reply",
@@ -50,7 +50,7 @@ var handler = async (m, { conn, usedPrefix }) => {
        ],
       })
     }
-  }, { contextInfo: { mentionedJid: [m.sender] }, quoted: m })
+  }), { contextInfo: { mentionedJid: [m.sender] }, quoted: m })
  
   await conn.relayMessage(msg.key.remoteJid, msg.message, media, { messageId: msg.key.id })
 
