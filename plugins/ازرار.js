@@ -49,7 +49,7 @@ let msg = generateWAMessageFromContent(m.chat, {
         })
     }
   }
-}, {})
+}, { contextInfo: { mentionedJid: [m.sender] }, quoted: m })
 
 await conn.relayMessage(msg.key.remoteJid, msg.message, vn, { messageId: msg.key.id })
 
