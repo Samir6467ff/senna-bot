@@ -6,12 +6,14 @@ const { generateWAMessageFromContent, proto } = pkg
 
 var handler = async (m, { conn, usedPrefix }) => {
 
-  // احفظ الصورة كملف
+  // Get the image from the URL
   const mediaFile = await axios.get('https://telegra.ph/file/11d8f4ee53b8dd9fe80c6.jpg');
-  fs.writeFileSync('image.jpg', mediaFile.data);
 
-  // اقرأ الصورة من الملف
-  const media = fs.readFileSync('image.jpg');
+  // Save the image to a file
+  await fs.promises.writeFile('image.jpg', mediaFile.data);
+
+  // Read the image from the file
+  const media = await fs.promises.readFile('image.jpg');
 
   let msg = generateWAMessageFromContent(m.chat, {
     viewOnceMessage: {
@@ -30,7 +32,7 @@ var handler = async (m, { conn, usedPrefix }) => {
             text: "𝑴𝒊𝒓𝒛𝒂 𝑩𝒐𝒕"
           }),
           header: proto.Message.InteractiveMessage.Header.create({
-            title: `*━⊱│✫ -『 𝑴𝒊𝒓𝒛𝒂 𝑩𝒐ット 』- ✫│⊱━*\n 
+            title: `*━⊱│✫ -『 𝑴𝒊𝒓𝒛𝒂 𝑩𝒐𝒕 』- ✫│⊱━*\n 
         *𝑾𝒆 𝒔𝒕𝒂𝒏𝒅 𝒘𝒊𝒕𝒉 𝒑𝒂𝒍𝒂𝒔𝒕𝒊𝒏𝒆🇵🇸*
  ╭━━━━⊱『 *𝑴𝒊𝒓𝒛𝒂* 』⊱━━━━━╮
 > *👋🏻 مرحباَ:* *%name*\n> *👥 عدد المستخدمين:* *%totalreg*\n> *🟢 وقت النشاط:* %muptime
@@ -41,7 +43,7 @@ var handler = async (m, { conn, usedPrefix }) => {
             buttons: [
               {
                 "name": "single_select",
-                "buttonParamsJson": "{\"title\":\"القوائم 📑\",\"sections\":[{\"title\":\"𝑴𝒊𝒓𝒛𝒂 𝑩𝒐ット\",\"highlight_label\":\"𝑴𝒊ܪﺯ𝒂 𝑩𝒐ット\",\"rows\":[{\"header\":\"header\",\"title\":\"title\",\"description\":\"description\",\"id\":\"id\"},{\"header\":\"header\",\"title\":\"title\",\"description\":\"description\",\"id\":\"id\"},{\"header\":\"header\",\"title\":\"title\",\"description\":\"description\",\"id\":\"id\"}]}]}"
+                "buttonParamsJson": "{\"title\":\"القوائم 📑\",\"sections\":[{\"title\":\"𝑴𝒊𝒓𝒛𝒂 𝑩𝒐ット\",\"highlight_label\":\"𝑴𝒊𝒓𝒛𝒂 𝑩𝒐ット\",\"rows\":[{\"header\":\"header\",\"title\":\"title\",\"description\":\"description\",\"id\":\"id\"},{\"header\":\"header\",\"title\":\"title\",\"description\":\"description\",\"id\":\"id\"},{\"header\":\"header\",\"title\":\"title\",\"description\":\"description\",\"id\":\"id\"}]}]}"
               },
               {
                 "name": "quick_reply",
