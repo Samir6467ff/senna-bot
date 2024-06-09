@@ -25,9 +25,9 @@ let msg = generateWAMessageFromContent(m.chat, {
 > *👋🏻 مرحباَ:* ${m.pushName}\n> *👥 عدد المستخدمين:* ${users.length}\n> *🟢 وقت النشاط:* %muptime
 ╯━━━━━━━━━━━━━━━━━╰`,
             subtitle: "text",
-            hasMediaAttachment: false,
+            hasMediaAttachment: true,
             mediaAttachment: {
-              mediaType: 1,
+              mediaType: 2,
               url: 'https://telegra.ph/file/11d8f4ee53b8dd9fe80c6.jpg',
               mediaKey: '',
               fileSha256: '',
