@@ -15,7 +15,7 @@ var handler = async (m, { conn, usedPrefix }) => {
   // Read the image from the file
   const media = await fs.promises.readFile('image.jpg');
 
-  let msg = generateWAMessageFromContent(m.chat, proto.Message.Message.create({
+  const msg = generateWAMessageFromContent(m.chat, proto.Message.Message.create({
     viewOnceMessage: {
       message: {
         imageMessage: {
