@@ -12,7 +12,7 @@ let m2 = `
 ▢ Sad
 └──────────────
 `
-    let pp = './src/fg_logo.jpg' 
+    let pp = 'fglog' 
     /*conn.sendButton(m.chat, m2, mssg.ig, pp, [
       ['⏍ Info', `${usedPrefix}botinfo`],
       ['⌬ Grupos', `${usedPrefix}gpdylux`]
