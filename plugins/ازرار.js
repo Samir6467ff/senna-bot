@@ -15,7 +15,9 @@ let msg = generateWAMessageFromContent(m.chat, {
         },
         interactiveMessage: proto.Message.InteractiveMessage.create({
           body: proto.Message.InteractiveMessage.Body.create({
-            text: ``
+            image: proto.Message.ImageMessage.create({
+              url: 'https://telegra.ph/file/11d8f4ee53b8dd9fe80c6.jpg'
+            })
           }),
           footer: proto.Message.InteractiveMessage.Footer.create({
             text: "𝑴𝒊𝒓𝒛𝒂 𝑩𝒐𝒕"
@@ -27,7 +29,7 @@ let msg = generateWAMessageFromContent(m.chat, {
 > *👋🏻 مرحباَ:* *%name*\n> *👥 عدد المستخدمين:* *%totalreg*\n> *🟢 وقت النشاط:* %muptime
 ╯━━━━━━━━━━━━━━━━━╰`,
             subtitle: "text",
-            hasMediaAttachment: false
+            hasMediaAttachment: true
           }),
           nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
             buttons: [
