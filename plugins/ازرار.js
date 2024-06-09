@@ -1,5 +1,6 @@
 import fs from 'fs';
 import pkg from '@whiskeysockets/baileys';
+import axios from 'axios'; // Import the axios package
 
 const { generateWAMessageFromContent, proto } = pkg
 
