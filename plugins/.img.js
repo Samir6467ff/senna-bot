@@ -33,20 +33,20 @@ const handler = async (m, { conn, text, usedPrefix: prefijo }) => {
             }
         };        
 
-        let msg = generateWAMessageFromContent(m.chat, {
+        let msg = generateWAMessageFromContent(m.chat, rcanal, {
             viewOnceMessage: {
                 message: {
                     interactiveMessage,
                 },
             },
         }, { userJid: conn.user.jid, quoted: m })
-        conn.relayMessage(m.chat, msg.message, { messageId: msg.key.id}, rcanal);
+        conn.relayMessage(m.chat, msg.message, { messageId: msg.key.id});
 
     } else {
         conn.sendFile(m.chat, 'JoAnimi•Error.jpg', m);      
     }    
 };
-handler.help = ['imgboton'];
-handler.tags = ['For Test'];
+//handler.help = ['imgboton'];
+//handler.tags = ['For Test'];
 handler.command = /^(تست)$/i;
 export default handler;
