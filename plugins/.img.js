@@ -1,6 +1,3 @@
-//Copyright ©JOANIMI/KILLUA
-//https://whatsapp.com/channel/0029Vab5oDNElagpHtJjmT0B
-
 import { prepareWAMessageMedia, generateWAMessageFromContent, getDevice } from '@whiskeysockets/baileys'
 
 const handler = async (m, { conn, text, usedPrefix: prefijo }) => {
@@ -10,7 +7,7 @@ const handler = async (m, { conn, text, usedPrefix: prefijo }) => {
         var joanimiimg = await prepareWAMessageMedia({ image: {url: 'https://telegra.ph/file/11d8f4ee53b8dd9fe80c6.jpg'}}, { upload: conn.waUploadToServer })
         const interactiveMessage = {
             body: { text: `test`.trim() },
-            footer: { text: `©JoAnimi for test`.trim() },  
+            footer: { text: `© 𝑴𝒊𝒓𝒛𝒂 𝑩𝒐𝒕`.trim() },  
             header: {
                 title: `test`,
                 subtitle: `test`,
@@ -21,15 +18,15 @@ const handler = async (m, { conn, text, usedPrefix: prefijo }) => {
   						buttons: [
                        {
                 "name": "single_select",
-                "buttonParamsJson": "{\"title\":\"title\",\"sections\":[{\"title\":\"title\",\"highlight_label\":\"label\",\"rows\":[{\"header\":\"header\",\"title\":\"title\",\"description\":\"description\",\"id\":\"id\"},{\"header\":\"header\",\"title\":\"title\",\"description\":\"description\",\"id\":\"id\"}]}]}"
+                "buttonParamsJson": "{\"title\":\"القوائــــــم\",\"sections\":[{\"title\":\"title\",\"highlight_label\":\"label\",\"rows\":[{\"header\":\"header\",\"title\":\"title\",\"description\":\"description\",\"id\":\"id\"},{\"header\":\"header\",\"title\":\"title\",\"description\":\"description\",\"id\":\"id\"}]}]}"
                        },
                        {
                 "name": "quick_reply",
-                "buttonParamsJson": "{\"display_text\":\"quick_reply\",\"id\":\"massage\"}"
+                "buttonParamsJson": "{\"display_text\":\"المطور\",\"id\":\"massage\"}"
                         },
                         {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"url\",\"url\":\"https://www.google.com\",\"merchant_url\":\"\"}"
+                 "buttonParamsJson": "{\"display_text\":\"قناتي\",\"url\":\"https://www.google.com\",\"merchant_url\":\"\"}"
                         },
   			  		],
                 messageParamsJson: ''
@@ -51,5 +48,5 @@ const handler = async (m, { conn, text, usedPrefix: prefijo }) => {
 };
 handler.help = ['imgboton'];
 handler.tags = ['For Test'];
-handler.command = /^(imgboton)$/i;
+handler.command = /^(تست)$/i;
 export default handler;
