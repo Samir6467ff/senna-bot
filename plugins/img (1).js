@@ -33,10 +33,10 @@ const handler = async (m, { conn, text, usedPrefix: prefijo }) => {
             }
         };        
         
-        let msg = generateWAMessageFromContent(m.chat, {
+        let msg = generateWAMessageFromContent(m.chat, null, rcanal, {
             viewOnceMessage: {
                 message: {
-                    interactiveMessage, null, rcanal
+                    interactiveMessage,
                 },
             },
         }, { userJid: conn.user.jid, quoted: m })
