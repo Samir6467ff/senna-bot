@@ -9,7 +9,7 @@ const handler = async (m, { conn, text, usedPrefix: prefijo }) => {
             body: { text: `مرحباً! ${m.pushName}`.trim() },
             footer: { text: `© 𝑴𝒊𝒓𝒛𝒂 𝑩𝒐𝒕`.trim() },  
             header: {
-                title: `test`,
+                title: ``,
                 subtitle: `test`,
                 hasMediaAttachment: true,
                 imageMessage: joanimiimg.imageMessage,
