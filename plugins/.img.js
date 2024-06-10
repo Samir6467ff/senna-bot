@@ -7,7 +7,7 @@ const handler = async (m, { conn, text, usedPrefix: prefijo }) => {
         var joanimiimg = await prepareWAMessageMedia({ image: {url: 'https://telegra.ph/file/11d8f4ee53b8dd9fe80c6.jpg'}}, { upload: conn.waUploadToServer })
         const interactiveMessage = {
             body: { text: `مرحباً! ${m.pushName}`.trim() },
-            footer: { text: `© 𝑴𝒊𝒓𝒛𝒂 𝑩𝒐𝒕`.trim() },  
+            footer: { text: `© ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴍʀ ʜᴀᴍᴢᴀ`.trim() },  
             header: {
                 title: ``,
                 subtitle: `test`,
