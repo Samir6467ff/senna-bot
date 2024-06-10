@@ -1,7 +1,7 @@
 import { generateWAMessageFromContent } from '@whiskeysockets/baileys'
 import uploadFile from '../lib/uploadFile.js'
 
-export default async (m, { conn, text, participants, isOwner, isAdmin }) => {
+let handler = async (m, { conn, text, participants, isOwner, isAdmin }) => {
     let users = participants.map(u => conn.decodeJid(u.id))
     let q = m.quoted ? m.quoted : m || m.text || m.sender
     let messageType = m.quoted ? q.mtype : 'extendedTextMessage'
