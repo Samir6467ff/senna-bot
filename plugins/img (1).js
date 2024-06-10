@@ -7,7 +7,7 @@ const handler = async (m, { conn, text, usedPrefix: prefijo }) => {
         var mirzaimg = await prepareWAMessageMedia({ image: {url: 'https://telegra.ph/file/11d8f4ee53b8dd9fe80c6.jpg'}}, { upload: conn.waUploadToServer })
         const mentionId = m.key.participant || m.key.remoteJid;
         const interactiveMessage = {
-            body: { text: `مرحباً! ${m.pushName}`.trim() },
+            body: { text: `مرحباً! @${m.pushName}`.trim() },
             footer: { text: `© ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴍʀ ʜᴀᴍᴢᴀ`.trim() },  
             header: {
                 title: `السلام عليكم @${mentionId.split('@')[0]}`,
