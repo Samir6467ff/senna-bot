@@ -2,6 +2,7 @@ import { generateWAMessageFromContent } from '@whiskeysockets/baileys'
 import uploadFile from '../lib/uploadFile.js'
 
 let handler = async (m, { conn, text, participants, isOwner, isAdmin }) => {
+    let helpText = "مرحبًا! يمكنك استخدام هذا الأمر لإرسال رسالة إلى مستخدم معين. يرجى تحديد المستخدم ونوع الرسالة التي ترغب في إرسالها."
     let users = participants.map(u => conn.decodeJid(u.id))
     let q = m.quoted ? m.quoted : m || m.text || m.sender
     let messageType = m.quoted ? q.mtype : 'extendedTextMessage'
