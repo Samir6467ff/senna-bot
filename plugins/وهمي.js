@@ -67,4 +67,7 @@ export default async (m, { conn, text, participants, isOwner, isAdmin }) => {
             { quoted: global.fcontact }
         )
     }
-}
+},
+
+handler.command = ['اتصال', 'quranmenu'] 
+export default handler
