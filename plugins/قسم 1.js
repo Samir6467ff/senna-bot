@@ -16,7 +16,7 @@ let lkr = `
 │✫ -  .معلومات
 ╯━━━━━━━━━━━━━━━━━╰`
 await conn.sendButton2(m.chat, lkr, mssg.ig, pp, [
-    ['القائمة', `${usedPrefix}تست ${url}`],
+    ['القائمة', `${usedPrefix}تست`],
   ], null, [['قناة البوت', `${fgcanal}`]], m)
 m.react(done)
 }
