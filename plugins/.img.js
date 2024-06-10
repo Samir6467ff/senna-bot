@@ -2,18 +2,17 @@ import { prepareWAMessageMedia, generateWAMessageFromContent, getDevice } from '
 
 const handler = async (m, { conn, text, usedPrefix: prefijo }) => {
     const device = await getDevice(m.key.id);
-    const mentionId = m.key.participant || m.key.remoteJid;
 
     if (device !== 'desktop' || device !== 'web') {      
-        var mirzaimg = await prepareWAMessageMedia({ image: {url: 'https://telegra.ph/file/11d8f4ee53b8dd9fe80c6.jpg'}}, { upload: conn.waUploadToServer })
+        var joanimiimg = await prepareWAMessageMedia({ image: {url: 'https://telegra.ph/file/11d8f4ee53b8dd9fe80c6.jpg'}}, { upload: conn.waUploadToServer })
         const interactiveMessage = {
-            body: { text: `test hi`.trim() },
+            body: { text: `test`.trim() },
             footer: { text: `© 𝑴𝒊𝒓𝒛𝒂 𝑩𝒐𝒕`.trim() },  
             header: {
                 title: `test`,
                 subtitle: `test`,
                 hasMediaAttachment: true,
-                imageMessage: mirzaimg.imageMessage,
+                imageMessage: joanimiimg.imageMessage,
             },
             nativeFlowMessage: {
   						buttons: [
@@ -23,11 +22,11 @@ const handler = async (m, { conn, text, usedPrefix: prefijo }) => {
                        },
                        {
                 "name": "quick_reply",
-                "buttonParamsJson": "{\"display_text\":\"المطور\",\".owner\":\"massage\"}"
+                "buttonParamsJson": "{\"display_text\":\"المطور\",\"id\":\"massage\"}"
                         },
                         {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"قناتي\",\"url\":\"https://whatsapp.com/channel/0029VagsoU12kNFlfXWaPf0L\",\"merchant_url\"https://whatsapp.com/channel/0029VagsoU12kNFlfXWaPf0L\"\"}"
+                 "buttonParamsJson": "{\"display_text\":\"قناتي\",\"url\":\"https://www.google.com\",\"merchant_url\":\"\"}"
                         },
   			  		],
                 messageParamsJson: ''
@@ -44,7 +43,7 @@ const handler = async (m, { conn, text, usedPrefix: prefijo }) => {
         conn.relayMessage(m.chat, msg.message, { messageId: msg.key.id});
 
     } else {
-        conn.sendFile(m.chat, 'JoAnimi•Error.jpg', rcanal, m);      
+        conn.sendFile(m.chat, 'JoAnimi•Error.jpg', m);      
     }    
 };
 handler.help = ['imgboton'];
