@@ -1,5 +1,4 @@
 let handler = async (m, { conn, usedPrefix, command}) => {
-if (!(who in global.db.data.users)) throw `✳️ The user is not found in my database`
 let pp = './src/fg_logo.jpg'
 let more = String.fromCharCode(8206)
 let readMore = more.repeat(850) 
