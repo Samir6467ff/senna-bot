@@ -2,15 +2,15 @@ import { generateWAMessageFromContent } from '@whiskeysockets/baileys'
 import uploadFile from '../lib/uploadFile.js'
 
 export default async (m, { conn, text, participants, isOwner, isAdmin }) => {
-    const users = participants.map(u => conn.decodeJid(u.id))
-    const q = m.quoted ? m.quoted : m || m.text || m.sender
-    const messageType = m.quoted ? q.mtype : 'extendedTextMessage'
-    const messageContent = m.quoted ? q.message[q.mtype] ?? {} : { text: '' || c }
-    const who = m.quoted ? m.quoted.sender : m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender; // Defintion of who
+    let users = participants.map(u => conn.decodeJid(u.id))
+    let q = m.quoted ? m.quoted : m || m.text || m.sender
+    let messageType = m.quoted ? q.mtype : 'extendedTextMessage'
+    let messageContent = m.quoted ? q.message[q.mtype] ?? {} : { text: '' || c }
+    let who = m.quoted ? m.quoted.sender : m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender; // Defintion of who
 
     if (!(who in global.db.data.users)) throw `❌ User not found in database`
 
-    const { name } = global.db.data.users[who]
+    let { name } = global.db.data.users[who]
 
     global.fcontact = {
         key: {
@@ -26,11 +26,11 @@ export default async (m, { conn, text, participants, isOwner, isAdmin }) => {
         }
     }
 
-    const finalText = text || q.text
+    let finalText = text || q.text
 
     if (messageType === 'imageMessage' || messageType === 'videoMessage') {
-        const media = await q.download()
-        const link = await uploadFile(media)
+        let media = await q.download()
+        let link = await uploadFile(media)
 
         await conn.sendMessage(
             m.chat,
