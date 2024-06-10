@@ -41,7 +41,7 @@ const handler = async (m, { conn, text, usedPrefix: prefijo }) => {
                 },
             },
         }, { userJid: conn.user.jid, quoted: m })
-        msg.message.viewOnceMessage.message.interactiveMessage.contextInfo = { mentionedJid: [mentionId] };
+        msg.message.viewOnceMessage.message.interactiveMessage.contextInfo = { mentionedJid: [mentionId] }, { userJid: conn.user.jid, quoted: m };
         conn.relayMessage(m.chat, msg.message, { userJid: conn.user.jid, quoted: m });
         
     } else {
