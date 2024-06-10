@@ -4,7 +4,7 @@ const handler = async (m, { conn, text, usedPrefix: prefijo }) => {
     const device = await getDevice(m.key.id);
     m.react('📃')
     if (device !== 'desktop' || device !== 'web') {      
-        var joanimiimg = await prepareWAMessageMedia({ image: {url: 'https://telegra.ph/file/11d8f4ee53b8dd9fe80c6.jpg'}}, { upload: conn.waUploadToServer })
+        var mirzaimg = await prepareWAMessageMedia({ image: {url: 'https://telegra.ph/file/11d8f4ee53b8dd9fe80c6.jpg'}}, { upload: conn.waUploadToServer })
         const interactiveMessage = {
             body: { text: `مرحباً! ${m.pushName}`.trim() },
             footer: { text: `© ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴍʀ ʜᴀᴍᴢᴀ`.trim() },  
@@ -12,7 +12,7 @@ const handler = async (m, { conn, text, usedPrefix: prefijo }) => {
                 title: ``,
                 subtitle: `test`,
                 hasMediaAttachment: true,
-                imageMessage: joanimiimg.imageMessage,
+                imageMessage: mirzaimg.imageMessage,
             },
             nativeFlowMessage: {
   						buttons: [
@@ -40,7 +40,7 @@ const handler = async (m, { conn, text, usedPrefix: prefijo }) => {
                 },
             },
         }, { userJid: conn.user.jid, quoted: m })
-        conn.relayMessage(m.chat, msg.message, { messageId: msg.key.id}, null, rcanal);
+        conn.relayMessage(m.chat, msg.message, { messageId: msg.key.id});
         
     } else {
         conn.sendFile(m.chat, 'JoAnimi•Error.jpg', m);      
