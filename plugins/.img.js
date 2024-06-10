@@ -2,7 +2,7 @@ import { prepareWAMessageMedia, generateWAMessageFromContent, getDevice } from '
 
 const handler = async (m, { conn, text, usedPrefix: prefijo }) => {
     const device = await getDevice(m.key.id);
-
+    m.react('📚')
     if (device !== 'desktop' || device !== 'web') {      
         var joanimiimg = await prepareWAMessageMedia({ image: {url: 'https://telegra.ph/file/11d8f4ee53b8dd9fe80c6.jpg'}}, { upload: conn.waUploadToServer })
         const interactiveMessage = {
@@ -32,7 +32,7 @@ const handler = async (m, { conn, text, usedPrefix: prefijo }) => {
                 messageParamsJson: ''
             }
         };        
-        m.react('📚')
+        
         let msg = generateWAMessageFromContent(m.chat, {
             viewOnceMessage: {
                 message: {
