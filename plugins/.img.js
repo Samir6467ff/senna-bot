@@ -18,7 +18,7 @@ const handler = async (m, { conn, text, usedPrefix: prefijo }) => {
   						buttons: [
                        {
                 "name": "single_select",
-                "buttonParamsJson": "{\"title\":\"القوائــــــم\",\"sections\":[{\"title\":\"title\",\"highlight_label\":\"label\",\"rows\":[{\"header\":\"header\",\"title\":\"title\",\"description\":\"description\",\"id\":\"id\"},{\"header\":\"header\",\"title\":\"title\",\"description\":\"description\",\"id\":\"id\"}]}]}"
+                "buttonParamsJson": "{\"title\":\"القوائــــــم\",\"sections\":[{\"title\":\"𝑴𝒊𝒓𝒛𝒂 𝑩𝒐𝒕\",\"highlight_label\":\"label\",\"rows\":[{\"header\":\"header\",\"title\":\"title\",\"description\":\"description\",\"id\":\"id\"},{\"header\":\"header\",\"title\":\"title\",\"description\":\"description\",\"id\":\"id\"}]}]}"
                        },
                        {
                 "name": "quick_reply",
@@ -39,7 +39,7 @@ const handler = async (m, { conn, text, usedPrefix: prefijo }) => {
                     interactiveMessage,
                 },
             },
-        }, { userJid: conn.user.jid, quoted: m }, rcanal)
+        }, { userJid: conn.user.jid, quoted: m })
         conn.relayMessage(m.chat, msg.message, { messageId: msg.key.id});
 
     } else {
