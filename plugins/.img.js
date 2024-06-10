@@ -18,15 +18,15 @@ const handler = async (m, { conn, text, usedPrefix: prefijo }) => {
   						buttons: [
                        {
                 "name": "single_select",
-                "buttonParamsJson": "{\"title\":\"القوائـــــــــم📑\",\"sections\":[{\"title\":\"𝑴𝒊𝒓𝒛𝒂 𝑩𝒐𝒕\",\"highlight_label\":\"label\",\"rows\":[{\"header\":\"القسم الأول\",\"title\":\"معلومات المطور\",\"id\":\"id\"},{\"header\":\"header\",\"title\":\"title\",\"description\":\"description\",\"id\":\"id\"},{\"header\":\"header\",\"title\":\"title\",\"description\":\"description\",\"id\":\"id\"},{\"header\":\"header\",\"title\":\"title\",\"description\":\"description\",\"id\":\"id\"},{\"header\":\"header\",\"title\":\"title\",\"description\":\"description\",\"id\":\"id\"},{\"header\":\"header\",\"title\":\"title\",\"description\":\"description\",\"id\":\"id\"},{\"header\":\"header\",\"title\":\"title\",\"description\":\"description\",\"id\":\"id\"}]}]}"
+                "buttonParamsJson": "{\"title\":\"القوائـــــــــم📑\",\"sections\":[{\"title\":\"𝑴𝒊𝒓𝒛𝒂 𝑩𝒐𝒕\",\"highlight_label\":\"𝙼𝚛 𝙷𝚊𝚖𝚣𝚊\",\"rows\":[{\"header\":\"القسم الأول\",\"title\":\"معلومات المطور\",\"id\":\"id\"},{\"header\":\"القسم الثاني\",\"title\":\"title\",\"description\":\"description\",\"id\":\"id\"},{\"header\":\"القسم الثالث\",\"title\":\"title\",\"description\":\"description\",\"id\":\"id\"},{\"header\":\"القسم الرابع\",\"title\":\"title\",\"description\":\"description\",\"id\":\"id\"},{\"header\":\"القسم الخامس\",\"title\":\"title\",\"description\":\"description\",\"id\":\"id\"},{\"header\":\"القسم السادس\",\"title\":\"title\",\"description\":\"description\",\"id\":\"id\"},{\"header\":\"القسم السابع\",\"title\":\"title\",\"description\":\"description\",\"id\":\"id\"}]}]}"
                        },
                        {
                 "name": "quick_reply",
-                "buttonParamsJson": "{\"display_text\":\"المطور\",\"id\":\".owner\"}"
+                "buttonParamsJson": "{\"display_text\":\"المطـــور\",\"id\":\".owner\"}"
                         },
                         {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"قناتي\",\"url\":\"https://whatsapp.com/channel/0029VagsoU12kNFlfXWaPf0L\",\"merchant_url\":\"\"}"
+                 "buttonParamsJson": "{\"display_text\":\"قنــاتــي\",\"url\":\"https://whatsapp.com/channel/0029VagsoU12kNFlfXWaPf0L\",\"merchant_url\":\"\"}"
                         },
   			  		],
                 messageParamsJson: ''
