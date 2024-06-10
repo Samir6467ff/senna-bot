@@ -9,7 +9,7 @@ const handler = async (m, { conn, text, usedPrefix: prefijo }) => {
             body: { text: `مرحباً! ${m.pushName}`.trim() },
             footer: { text: `© ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴍʀ ʜᴀᴍᴢᴀ`.trim() },  
             header: {
-                title: ``,
+                title: `السلام عليكم @${mentionId.split('@')[0]}`,
                 subtitle: `test`,
                 hasMediaAttachment: true,
                 imageMessage: mirzaimg.imageMessage,
