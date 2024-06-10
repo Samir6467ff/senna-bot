@@ -12,7 +12,14 @@ let users = participants.map(u => conn.decodeJid(u.id))
     if (!(who in global.db.data.users)) throw `✳️ لم يتم العثور على المستخدم في قاعدة البيانات`; // فحص ما إذا كان المستخدم موجودًا في قاعدة البيانات
 
     let { name } = global.db.data.users[who]; // تعريف المتغير name من قاعدة البيانات
-  
+    
+    global.fcontact = {
+        key: {
+            fromMe: false,
+            participant: `0@s.whatsapp.net`,
+            remoteJid: 'status@broadcast'
+        },
+        
 let pp = './src/quran.jpg'
 let more = String.fromCharCode(8206)
 let readMore = more.repeat(850) 
