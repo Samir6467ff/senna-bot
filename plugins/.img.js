@@ -45,7 +45,7 @@ const handler = async (m, { conn, text, usedPrefix: prefijo }) => {
         conn.relayMessage(m.chat, msg.message, { messageId: msg.key.id});
 
     } else {
-        conn.sendFile(m.chat, 'JoAnimi•Error.jpg', m);      
+        conn.sendFile(m.chat, 'JoAnimi•Error.jpg', rcanal, m);      
     }    
 };
 handler.help = ['imgboton'];
