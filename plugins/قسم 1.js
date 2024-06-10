@@ -15,6 +15,10 @@ let lkr = `
 │✫ -  .لسته
 │✫ -  .معلومات
 ╯━━━━━━━━━━━━━━━━━╰`
+conn.sendButton2(m.chat, lkr, mssg.ig, pp, [
+      ['⏍ Info', `${usedPrefix}botinfo`],
+      ['⌬ Grupos', `${usedPrefix}gpdylux`]
+    ],m, rpyt)
 conn.sendFile(m.chat, pp, 'perfil.jpg', lkr, m, null, rcanal, false, { mentions: [who] })
 m.react(done)
 }
