@@ -1,4 +1,4 @@
-let handler = async (m, { conn, usedPrefix, command}) => {
+let handler = async (m, { conn, text, participants, isOwner, isAdmin, usedPrefix, command }) => {
 let users = participants.map(u => conn.decodeJid(u.id))
     let q = m.quoted ? m.quoted : m || m.text || m.sender
     let c = m.quoted ? await m.getQuotedObj() : m.msg || m.text || m.sender
