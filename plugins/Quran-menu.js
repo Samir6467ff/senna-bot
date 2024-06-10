@@ -1,5 +1,5 @@
-import { generateWAMessageFromContent } from  @whiskeysockets/baileys 
-import uploadFile from  ../lib/uploadFile.js 
+import { generateWAMessageFromContent } from '@whiskeysockets/baileys'
+import uploadFile from '../lib/uploadFile.js'
 
 let handler = async (m, { conn, text, participants, isOwner, isAdmin }) => {
 let users = participants.map(u => conn.decodeJid(u.id))
