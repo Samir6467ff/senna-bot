@@ -23,11 +23,11 @@ const handler = async (m, { conn, text, usedPrefix: prefijo }) => {
                        },
                        {
                 "name": "quick_reply",
-                "buttonParamsJson": "{\"display_text\":\"المطور\",\"id\":\"massage\"}"
+                "buttonParamsJson": "{\"display_text\":\"المطور\",\".owner\":\"massage\"}"
                         },
                         {
                  "name": "cta_url",
-                 "buttonParamsJson": "{\"display_text\":\"قناتي\",\"url\":\"https://www.google.com\",\"merchant_url\":\"\"}"
+                 "buttonParamsJson": "{\"display_text\":\"قناتي\",\"url\":\"https://whatsapp.com/channel/0029VagsoU12kNFlfXWaPf0L\",\"merchant_url\"https://whatsapp.com/channel/0029VagsoU12kNFlfXWaPf0L\"\"}"
                         },
   			  		],
                 messageParamsJson: ''
