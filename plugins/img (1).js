@@ -10,7 +10,7 @@ const handler = async (m, { conn, text, usedPrefix: prefijo }) => {
             body: { text: `مرحباً! @${m.pushName}`.trim() },
             footer: { text: `© ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴍʀ ʜᴀᴍᴢᴀ`.trim() },  
             header: {
-                title: `السلام عليكم @${mentionId.split('@')[0]}`,
+                title: `السلام عليكم ${mentionId.split('@')[0]}`,
                 subtitle: `test`,
                 hasMediaAttachment: true,
                 imageMessage: mirzaimg.imageMessage,
@@ -42,7 +42,7 @@ const handler = async (m, { conn, text, usedPrefix: prefijo }) => {
             },
         }, { userJid: conn.user.jid, quoted: m })
         msg.message.viewOnceMessage.message.interactiveMessage.contextInfo = { mentionedJid: [mentionId] };
-        conn.relayMessage(m.chat, msg.message, { messageId: msg.key.id});
+        conn.relayMessage(m.chat, msg.message, { messageId: msg.key.id}, m);
         
     } else {
         conn.sendFile(m.chat, 'JoAnimi•Error.jpg', m);      
