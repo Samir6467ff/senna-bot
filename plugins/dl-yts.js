@@ -1,0 +1,21 @@
+
+import yts from 'yt-search'
+let handler = async (m, {conn, text }) => {	
+  if (!text) throw `✳️ ${mssg.search('YouTube')}`
+  let results = await yts(text)
+m.react('📽️');
+	let tes = results.videos
+let teks = tes.map(v => `
+📌 ${v.title}
+*⌚${mssg.duration}:* ${v.timestamp}
+*📆${mssg.aploud}:* ${v.ago}
+*👀${mssg.views}:* ${v.views.toLocaleString()}
+*🔗${mssg.link}:* ${v.url}
+`.trim()).join('\n________________________\n\n')
+	conn.sendFile(m.chat, tes[0].image, 'yts.jpeg', teks, m)
+}
+handler.help = ['بحث'] 
+handler.tags = ['dl']
+handler.command = ['ytsearch', 'yts','بحث','يوتيوب'] 
+
+export default handler
