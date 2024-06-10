@@ -4,7 +4,7 @@ const handler = async (m, { conn, text, usedPrefix: prefijo }) => {
     const device = await getDevice(m.key.id);
 
     if (device !== 'desktop' || device !== 'web') {      
-        var joanimiimg = await prepareWAMessageMedia({ image: {url: 'https://telegra.ph/file/11d8f4ee53b8dd9fe80c6.jpg'}}, { upload: conn.waUploadToServer })
+        var mirzaimg = await prepareWAMessageMedia({ image: {url: 'https://telegra.ph/file/11d8f4ee53b8dd9fe80c6.jpg'}}, { upload: conn.waUploadToServer })
         const interactiveMessage = {
             body: { text: `test`.trim() },
             footer: { text: `© 𝑴𝒊𝒓𝒛𝒂 𝑩𝒐𝒕`.trim() },  
@@ -12,7 +12,7 @@ const handler = async (m, { conn, text, usedPrefix: prefijo }) => {
                 title: `test`,
                 subtitle: `test`,
                 hasMediaAttachment: true,
-                imageMessage: joanimiimg.imageMessage,
+                imageMessage: mirzaimg.imageMessage,
             },
             nativeFlowMessage: {
   						buttons: [
