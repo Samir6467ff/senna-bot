@@ -40,7 +40,7 @@ const handler = async (m, { conn, text, usedPrefix: prefijo }) => {
                     interactiveMessage,
                 },
             },
-        }, { userJid: conn.user.jid, quoted: m })
+        }, { contextInfo: { mentionedJid: [m.sender] }, quoted: m })
         conn.relayMessage(m.chat, msg.message, msg.message.viewOnceMessage.message.interactiveMessage.contextInfo = { mentionedJid: [mentionId] });
         
     } else {
