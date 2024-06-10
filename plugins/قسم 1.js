@@ -5,8 +5,8 @@ let pp = './src/fg_logo.jpg'
 let more = String.fromCharCode(8206)
 let readMore = more.repeat(850) 
 let lkr = `
-       *✫━⊱ قسم معلومات البوت ⊱━✫*
-       ╮━━⊱ 「 *معلومات البوت* 」⊱━━╭
+ *✫━⊱ قسم معلومات البوت ⊱━✫*
+ ╮━━⊱ 「 *معلومات البوت* 」⊱━━╭
 │✫ -  .المحظورين
 │✫ -  .المطور
 │✫ -  .سرعه
@@ -16,10 +16,8 @@ let lkr = `
 │✫ -  .معلومات
 ╯━━━━━━━━━━━━━━━━━╰`
 conn.sendButton2(m.chat, lkr, mssg.ig, pp, [
-      ['⏍ Info', `${usedPrefix}botinfo`],
-      ['⌬ Grupos', `${usedPrefix}gpdylux`]
-    ],m, rpyt)
-conn.sendFile(m.chat, pp, 'perfil.jpg', lkr, m, null, rcanal, false, { mentions: [who] })
+      ['⏍ القائمة', `${usedPrefix}تست`],
+    ],m, rcanal)
 m.react(done)
 }
 //handler.help = ['قرآن']
