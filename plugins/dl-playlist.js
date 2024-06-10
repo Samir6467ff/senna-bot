@@ -29,12 +29,12 @@ let handler = async (m, { conn, usedPrefix, text, args, command }) => {
         });
     }
 
-    await conn.sendList(m.chat, '*•┈┈••●◆♪ 𝑴𝒊𝒓𝒛𝒂 𝑴𝒖𝒔𝒊𝒄 ♪◆●••┈┈•*', `\n 📀 النتيجة:\n *${text}*`, `اضغط هنا`, ytres[0].image, listSections, m);
+    await conn.sendList(m.chat, '*•┈┈••●◆♪ 𝑴𝒊𝒓𝒛𝒂 𝑴𝒖𝒔𝒊𝒄 ♪◆●••┈┈•*', `\n 📀 النتيجة:\n *${text}*`, `نتائج البحث 🔍`, ytres[0].image, listSections, m);
 };
 
-handler.help = ['شغل2']
+handler.help = ['بحث']
 handler.tags = ['dl']
-handler.command = ['play2', 'playvid2', 'playlist', 'playlista', 'شغل2'] 
+handler.command = ['play2', 'playvid2', 'playlist', 'playlista', 'بحث'] 
 handler.disabled = false
 
 export default handler
