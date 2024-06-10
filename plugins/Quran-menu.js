@@ -19,8 +19,8 @@ let users = participants.map(u => conn.decodeJid(u.id))
             participant: `0@s.whatsapp.net`,
             remoteJid: 'status@broadcast'
         },
- 
-let finalText = text || q.text       
+    },
+let finalText = text || q.text
 let pp = './src/quran.jpg'
 let more = String.fromCharCode(8206)
 let readMore = more.repeat(850) 
