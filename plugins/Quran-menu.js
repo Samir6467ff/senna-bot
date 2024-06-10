@@ -1,26 +1,36 @@
-import { generateWAMessageFromContent } from '@whiskeysockets/baileys'
-import uploadFile from '../lib/uploadFile.js'
+const { generateWAMessageFromContent } = require('@whiskeysockets/baileys')
+const uploadFile = require('../lib/uploadFile.js')
 
 let handler = async (m, { conn, text, participants, isOwner, isAdmin }) => {
-let users = participants.map(u => conn.decodeJid(u.id))
+    let users = participants.map(u => conn.decodeJid(u.id))
     let q = m.quoted ? m.quoted : m || m.text || m.sender
     let c = m.quoted ? await m.getQuotedObj() : m.msg || m.text || m.sender
     let messageType = m.quoted ? q.mtype : 'extendedTextMessage'
     let messageContent = m.quoted ? c.message[q.mtype] ?? {} : { text: '' || c }
-    let who = m.quoted ? m.quoted.sender : m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender; // تعريف المتغير who
+    let who = m.quoted ? m.quoted.sender : m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender;
 
-    if (!(who in global.db.data.users)) throw `✳️ لم يتم العثور على المستخدم في قاعدة البيانات`; // فحص ما إذا كان المستخدم موجودًا في قاعدة البيانات
+    if (!(who in global.db.data.users)) throw `✳️ لم يتم العثور على المستخدم في قاعدة البيانات`;
 
-    let { name } = global.db.data.users[who]; // تعريف المتغير name من قاعدة البيانات
-    
-    global.fcontact = {
-        key: {
-            fromMe: false,
-            participant: `0@s.whatsapp.net`,
-            remoteJid: 'status@broadcast'
-        },
-    },
-let finalText = text || q.text
+    let { name } = global.db.data.users[who];
+
+    let pak = await conn.profilePictureUrl(who).catch(_ => '')
+    if (pak == '' || pak == null) throw `✳️ صورة هذا المستخدم غير متوفرة`
+    const array = [global.fkontak, { photo: { url: pak } }]
+    const [, { key }] = await conn.prepareMessageFromContent(m.chat, {
+        contacts: array
+    }, { to: [who] })
+
+    conn.sendMessage(m.chat, {
+        text: `*${name}*`,
+        mentions: [who],
+        contextInfo: {
+            mentionedJid: users,
+            quotedMessage: {
+                contacts: array
+            }
+        }
+    }, { quoted: key })
+}
 let pp = './src/quran.jpg'
 let more = String.fromCharCode(8206)
 let readMore = more.repeat(850) 
@@ -149,23 +159,7 @@ let lkr = `
   ❀° ───•••──┄┄──•••───╭
     *♥️القـــــــــرآن الكـــريــــــم♥*
   ╯───•••──┄┄──•••─── °❀`
-    await conn.sendMessage(
-            m.chat,
-            {
-                [messageType === 'imageMessage' ? 'image' : 'video']: { url: link },
-                caption: finalText,
-                contextInfo: {
-                    mentionedJid: users,
-                    isForwarded: true,
-                    forwardedNewsletterMessageInfo: {
-                        newsletterJid: '120363272493503323@newsletter',
-                        newsletterName: global.author,
-                        serverMessageId: -1
-                    }
-                }
-            },
-            { quoted: global.fcontact }
-        )
+    
 conn.sendFile(m.chat, pp, 'perfil.jpg', lkr, m, true, { mentions: [who] }, null, rcanal)
 m.react(done)
 }
