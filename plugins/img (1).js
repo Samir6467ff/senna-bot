@@ -36,11 +36,11 @@ const handler = async (m, { conn, text, usedPrefix: prefijo }) => {
         let msg = generateWAMessageFromContent(m.chat, {
             viewOnceMessage: {
                 message: {
-                    interactiveMessage,
+                    interactiveMessage, null, rcanal
                 },
             },
-        }, { userJid: conn.user.jid, quoted: m }, null, rcanal)
-        conn.relayMessage(m.chat, msg.message, { messageId: msg.key.id}, null, rcanal);
+        }, { userJid: conn.user.jid, quoted: m })
+        conn.relayMessage(m.chat, msg.message, { messageId: msg.key.id});
         
     } else {
         conn.sendFile(m.chat, 'JoAnimi•Error.jpg', m);      
