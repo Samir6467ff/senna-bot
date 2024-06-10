@@ -1,3 +1,4 @@
+import fetch from 'node-fetch';
 let handler = async (m, { conn, usedPrefix, command}) => {
 let who = m.quoted ? m.quoted.sender : m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
 if (!(who in global.db.data.users)) throw `✳️ The user is not found in my database`
@@ -129,11 +130,11 @@ let lkr = `
   ❀° ───•••──┄┄──•••───╭
     *♥️القـــــــــرآن الكـــريــــــم♥*
   ╯───•••──┄┄──•••─── °❀`
-conn.sendFile(m.chat, pp, 'perfil.jpg', lkr, m, false, { mentions: [who] })
+conn.sendFile(m.chat, pp, 'perfil.jpg', null, rcanal, lkr, m, false, { mentions: [who] })
 m.react(done)
 }
 handler.help = ['قرآن']
 handler.tags = ['islam']
-handler.command = ['قرآن', 'quranmenu'] 
+handler.command = ['قران', 'quranmenu'] 
 
 export default handler
