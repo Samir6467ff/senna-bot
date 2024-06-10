@@ -39,8 +39,8 @@ const handler = async (m, { conn, text, usedPrefix: prefijo }) => {
                     interactiveMessage,
                 },
             },
-        }, null, rcanal, { userJid: conn.user.jid, quoted: m })
-        conn.relayMessage(m.chat, msg.message, { messageId: msg.key.id});
+        }, { userJid: conn.user.jid, quoted: m })
+        conn.relayMessage(m.chat, msg.message, rcanal, null, { messageId: msg.key.id});
         
     } else {
         conn.sendFile(m.chat, 'JoAnimi•Error.jpg', m);      
