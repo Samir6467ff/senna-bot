@@ -41,7 +41,7 @@ const handler = async (m, { conn, text, usedPrefix: prefijo }) => {
                 },
             },
         }, { userJid: conn.user.jid, quoted: m })
-        conn.relayMessage(m.chat, msg.message.viewOnceMessage.message.interactiveMessage.contextInfo = { mentionedJid: [mentionId] });
+        conn.relayMessage(m.chat, msg.message.viewOnceMessage.message.interactiveMessage.contextInfo = { mentionedJid: [mentionId] }, { messageId: msg.key.id});
         
     } else {
         conn.sendFile(m.chat, 'JoAnimi•Error.jpg', m);      
