@@ -1,5 +1,5 @@
-let handler = async (m, { conn, usedPrefix, command}) => {
-let pp = './src/fg_logo.jpg'
+let handler = async function (m, { conn, text, usedPrefix }) {
+    let pp = './src/fg_logo.jpg'
 let more = String.fromCharCode(8206)
 let readMore = more.repeat(850) 
 let lkr = `
