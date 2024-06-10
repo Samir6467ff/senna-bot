@@ -5,8 +5,8 @@ let pp = './src/fg_logo.jpg'
 let more = String.fromCharCode(8206)
 let readMore = more.repeat(850) 
 let lkr = `
- *✫━⊱ قسم معلومات البوت ⊱━✫*
- ╮━━⊱ 「 *معلومات البوت* 」⊱━━╭
+*✫━⊱ قسم معلومات البوت ⊱━✫*
+╮━━⊱ 「 *معلومات البوت* 」⊱━━╭
 │✫ -  .المحظورين
 │✫ -  .المطور
 │✫ -  .سرعه
@@ -15,9 +15,9 @@ let lkr = `
 │✫ -  .لسته
 │✫ -  .معلومات
 ╯━━━━━━━━━━━━━━━━━╰`
-conn.sendButton2(m.chat, lkr, mssg.ig, pp, [
-      ['⏍ القائمة', `${usedPrefix}تست`],
-    ],m, rcanal)
+await conn.sendButton2(m.chat, lkr, mssg.ig, pp, [
+    ['القائمة', `${usedPrefix}تست ${url}`],
+  ], null, [['قناة البوت', `${fgcanal}`]], m)
 m.react(done)
 }
 //handler.help = ['قرآن']
