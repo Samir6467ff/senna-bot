@@ -1,36 +1,6 @@
-const { generateWAMessageFromContent } = require('@whiskeysockets/baileys')
-const uploadFile = require('../lib/uploadFile.js')
-
-let handler = async (m, { conn, text, participants, isOwner, isAdmin }) => {
-    let users = participants.map(u => conn.decodeJid(u.id))
-    let q = m.quoted ? m.quoted : m || m.text || m.sender
-    let c = m.quoted ? await m.getQuotedObj() : m.msg || m.text || m.sender
-    let messageType = m.quoted ? q.mtype : 'extendedTextMessage'
-    let messageContent = m.quoted ? c.message[q.mtype] ?? {} : { text: '' || c }
-    let who = m.quoted ? m.quoted.sender : m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender;
-
-    if (!(who in global.db.data.users)) throw `✳️ لم يتم العثور على المستخدم في قاعدة البيانات`;
-
-    let { name } = global.db.data.users[who];
-
-    let pak = await conn.profilePictureUrl(who).catch(_ => '')
-    if (pak == '' || pak == null) throw `✳️ صورة هذا المستخدم غير متوفرة`
-    const array = [global.fkontak, { photo: { url: pak } }]
-    const [, { key }] = await conn.prepareMessageFromContent(m.chat, {
-        contacts: array
-    }, { to: [who] })
-
-    conn.sendMessage(m.chat, {
-        text: `*${name}*`,
-        mentions: [who],
-        contextInfo: {
-            mentionedJid: users,
-            quotedMessage: {
-                contacts: array
-            }
-        }
-    }, { quoted: key })
-}
+let handler = async (m, { conn, usedPrefix, command}) => {
+let who = m.quoted ? m.quoted.sender : m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
+if (!(who in global.db.data.users)) throw `✳️ The user is not found in my database`
 let pp = './src/quran.jpg'
 let more = String.fromCharCode(8206)
 let readMore = more.repeat(850) 
@@ -159,8 +129,7 @@ let lkr = `
   ❀° ───•••──┄┄──•••───╭
     *♥️القـــــــــرآن الكـــريــــــم♥*
   ╯───•••──┄┄──•••─── °❀`
-    
-conn.sendFile(m.chat, pp, 'perfil.jpg', lkr, m, true, { mentions: [who] }, null, rcanal)
+conn.sendFile(m.chat, pp, 'perfil.jpg', lkr, m, false, { mentions: [who] })
 m.react(done)
 }
 handler.help = ['قرآن']
