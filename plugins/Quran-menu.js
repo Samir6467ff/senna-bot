@@ -141,6 +141,21 @@ let lkr = `
   ❀° ───•••──┄┄──•••───╭
     *♥️القـــــــــرآن الكـــريــــــم♥*
   ╯───•••──┄┄──•••─── °❀`
+    await conn.sendMessage(
+            m.chat,
+            {
+                [messageType === 'imageMessage' ? 'image' : 'video']: { url: link },
+                caption: finalText,
+                contextInfo: {
+                    mentionedJid: users,
+                    isForwarded: true,
+                    forwardedNewsletterMessageInfo: {
+                        newsletterJid: '120363272493503323@newsletter',
+                        newsletterName: global.author,
+                        serverMessageId: -1
+                    }
+                }
+            },
 conn.sendFile(m.chat, pp, 'perfil.jpg', lkr, m, true, { mentions: [who] }, null, rcanal)
 m.react(done)
 }
