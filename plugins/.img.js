@@ -22,7 +22,7 @@ const handler = async (m, { conn, text, usedPrefix: prefijo }) => {
                        },
                        {
                 "name": "quick_reply",
-                "buttonParamsJson": "{\"display_text\":\"المطور\",\".owner\":\"massage\"}"
+                "buttonParamsJson": "{\"display_text\":\"المطور\",\"id\":\".owner\"}"
                         },
                         {
                  "name": "cta_url",
