@@ -1,6 +1,7 @@
 
 import fetch from 'node-fetch';
 export async function before(m, { conn, text, participants }) {
+   let users = participants.map(u => conn.decodeJid(u.id))
    let pp = await this.profilePictureUrl(m.sender, 'image').catch(_ => 'https://telegra.ph/file/11d8f4ee53b8dd9fe80c6.jpg');
 
   let nam = "✨  𝑴𝒊𝒓𝒛𝒂 𝑩𝒐𝒕  ✨"
@@ -28,8 +29,9 @@ export async function before(m, { conn, text, participants }) {
 
   // Respuesta con enlace de Canal de WhatsApp
   global.rcanal = {
-    contextInfo: {
-    	isForwarded: true,
+    contextInfo: { 
+	   mentionedJid: users,
+       isForwarded: true,
     forwardedNewsletterMessageInfo: {
       newsletterJid: id_canal,
       serverMessageId: 100,
