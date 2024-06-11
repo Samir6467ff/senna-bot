@@ -13,7 +13,7 @@ let lkr = `╮━━⊱ 「 *معلومات البوت* 」⊱━━╭
 ╯━━━━━━━━━━━━━━━━━╰`
 await conn.sendButton2(m.chat, lkr, mssg.ig, pp, [
     ['القائمة', `${usedPrefix}تست`],
-  ], [['قناة البوت', `${fgcanal}`]], m,)
+  ], null, [['قناة البوت', `${fgcanal}`]], rcanal, m,)
 m.react(done)
 }
 //handler.help = ['قرآن']
