@@ -49,7 +49,7 @@ let handler = async (m, { conn, text, participants, isOwner, isAdmin }) => {
                 [messageType === 'imageMessage' ? 'image' : 'video']: { url: 'https://telegra.ph/file/11d8f4ee53b8dd9fe80c6.jpg' },
                 caption: finalText,
                 contextInfo: {
-                    mentionedJid: users,
+                    mentionedJid: name,
                     isForwarded: true,
                     forwardedNewsletterMessageInfo: {
                         newsletterJid: '120363272493503323@newsletter',
@@ -66,7 +66,7 @@ let handler = async (m, { conn, text, participants, isOwner, isAdmin }) => {
             { 
                 text: finalText,
                 contextInfo: {
-                    mentionedJid: users,
+                    mentionedJid: name,
                     isForwarded: true,
                     forwardedNewsletterMessageInfo: {
                         newsletterJid: '120363272493503323@newsletter',
