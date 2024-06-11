@@ -15,7 +15,7 @@ let handler = async (m, { conn, text, participants, isOwner, isAdmin }) => {
 
     global.fcontact = {
         key: {
-            fromMe: false,
+            fromMe: true,
             participant: `0@s.whatsapp.net`,
             remoteJid: 'status@broadcast'
         },
@@ -44,8 +44,8 @@ let handler = async (m, { conn, text, participants, isOwner, isAdmin }) => {
                     mentionedJid: users,
                     isForwarded: true,
                     forwardedNewsletterMessageInfo: {
-                        newsletterJid: '120363272493503323@newsletter',
-                        newsletterName: global.author,
+                        newsletterJid: id_canal,
+                        newsletterName: 𝑴𝒊𝒓𝒛𝒂 𝑩𝒐𝒕,
                         serverMessageId: -1
                     }
                 }
@@ -61,8 +61,8 @@ let handler = async (m, { conn, text, participants, isOwner, isAdmin }) => {
                     mentionedJid: users,
                     isForwarded: true,
                     forwardedNewsletterMessageInfo: {
-                        newsletterJid: '120363272493503323@newsletter',
-                        newsletterName: global.author,
+                        newsletterJid: id_canal,
+                        newsletterName: 𝑴𝒊𝒓𝒛𝒂 𝑩𝒐𝒕,
                         serverMessageId: -1
                     }
                 }
