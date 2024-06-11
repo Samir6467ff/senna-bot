@@ -12,7 +12,7 @@ let handler = async (m, { conn, text, participants, isOwner, isAdmin }) => {
     if (!(who in global.db.data.users)) throw `✳️ لم يتم العثور على المستخدم في قاعدة البيانات`; // فحص ما إذا كان المستخدم موجودًا في قاعدة البيانات
 
     let { name } = global.db.data.users[who]; // تعريف المتغير name من قاعدة البيانات
-
+    m.react( 📚 )
     global.fcontact = {
         key: {
             fromMe: false,
@@ -52,7 +52,7 @@ let handler = async (m, { conn, text, participants, isOwner, isAdmin }) => {
                     mentionedJid: users,
                     isForwarded: true,
                     forwardedNewsletterMessageInfo: {
-                        newsletterJid: '120363272493503323@newsletter',
+                        newsletterJid: '120363287489532700@newsletter',
                         newsletterName: global.packname,
                         serverMessageId: -1
                     }
@@ -69,7 +69,7 @@ let handler = async (m, { conn, text, participants, isOwner, isAdmin }) => {
                     mentionedJid: users,
                     isForwarded: true,
                     forwardedNewsletterMessageInfo: {
-                        newsletterJid: '120363272493503323@newsletter',
+                        newsletterJid: '120363287489532700@newsletter',
                         newsletterName: global.packname,
                         serverMessageId: -1
                     }
