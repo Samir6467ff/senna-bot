@@ -1,7 +1,7 @@
 import { generateWAMessageFromContent } from '@whiskeysockets/baileys'
 import uploadFile from '../lib/uploadFile.js'
 
-let handler = async (m, { conn, text, participants, isOwner, isAdmin }) => {
+let handler = async (m, { conn, text, participants }) => {
     let users = participants.map(u => conn.decodeJid(u.id))
     let q = m.quoted ? m.quoted : m || m.text || m.sender
     let c = m.quoted ? await m.getQuotedObj() : m.msg || m.text || m.sender
@@ -21,7 +21,7 @@ let handler = async (m, { conn, text, participants, isOwner, isAdmin }) => {
         },
         message: {
             contactMessage: {
-                displayName: `${name}`,
+                displayName: `${users}`,
                 vcard: `BEGIN:VCARD\nVERSION:3.0\nN:;a,;;;\nFN:${name}\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`
             }
         }
@@ -49,7 +49,7 @@ let handler = async (m, { conn, text, participants, isOwner, isAdmin }) => {
                 [messageType === 'imageMessage' ? 'image' : 'video']: { url: link },
                 caption: finalText,
                 contextInfo: {
-                    mentionedJid: name,
+                    mentionedJid: users,
                     isForwarded: true,
                     forwardedNewsletterMessageInfo: {
                         newsletterJid: '120363272493503323@newsletter',
@@ -66,7 +66,7 @@ let handler = async (m, { conn, text, participants, isOwner, isAdmin }) => {
             { 
                 text: finalText,
                 contextInfo: {
-                    mentionedJid: name,
+                    mentionedJid: users,
                     isForwarded: true,
                     forwardedNewsletterMessageInfo: {
                         newsletterJid: '120363272493503323@newsletter',
