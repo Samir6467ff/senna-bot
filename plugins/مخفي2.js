@@ -21,22 +21,14 @@ let handler = async (m, { conn, text, participants, isOwner, isAdmin }) => {
         },
         message: {
             contactMessage: {
-                displayName: `${users}`,
+                displayName: `${name}`,
                 vcard: `BEGIN:VCARD\nVERSION:3.0\nN:;a,;;;\nFN:${name}\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`
             }
         }
     }
 
     // التحقق من أن قيمة text ليست فارغة أو null
-    let finalText = `╮━━⊱ 「 *معلومات البوت* 」⊱━━╭
-│✫ -  .المحظورين
-│✫ -  .المطور
-│✫ -  .سرعه
-│✫ -  .وقت التشغيل
-│✫ -  .الدعم
-│✫ -  .لسته
-│✫ -  .معلومات
-╯━━━━━━━━━━━━━━━━━╰`
+    let finalText = 'مرحبا'
 
     // التحقق مما إذا كان المحتوى المرسل هو صورة أو فيديو
     if (messageType === 'imageMessage' || messageType === 'videoMessage') {
@@ -46,10 +38,10 @@ let handler = async (m, { conn, text, participants, isOwner, isAdmin }) => {
         await conn.sendMessage(
             m.chat,
             {
-                [messageType === 'imageMessage' ? 'image' : 'video']: { url: 'https://telegra.ph/file/11d8f4ee53b8dd9fe80c6.jpg' },
+                [messageType === 'imageMessage' ? 'image' : 'video']: { url: link },
                 caption: finalText,
                 contextInfo: {
-                    mentionedJid: name,
+                    mentionedJid: users,
                     isForwarded: true,
                     forwardedNewsletterMessageInfo: {
                         newsletterJid: '120363272493503323@newsletter',
@@ -66,7 +58,7 @@ let handler = async (m, { conn, text, participants, isOwner, isAdmin }) => {
             { 
                 text: finalText,
                 contextInfo: {
-                    mentionedJid: name,
+                    mentionedJid: users,
                     isForwarded: true,
                     forwardedNewsletterMessageInfo: {
                         newsletterJid: '120363272493503323@newsletter',
