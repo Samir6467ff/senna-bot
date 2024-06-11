@@ -74,7 +74,7 @@ export async function before(m, { conn, text, participants }) {
       serverMessageId: 100,
       newsletterName: nam,
     }
-    }
+    } ,{ quoted: global.fcontact }
   };
 
   // Respuesta con enlace de PayPal
