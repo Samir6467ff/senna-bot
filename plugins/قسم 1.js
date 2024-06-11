@@ -2,8 +2,7 @@ let handler = async function (m, { conn, text, usedPrefix }) {
     let pp = './src/fg_logo.jpg'
 let more = String.fromCharCode(8206)
 let readMore = more.repeat(850) 
-let lkr = `
-╮━━⊱ 「 *معلومات البوت* 」⊱━━╭
+let lkr = `╮━━⊱ 「 *معلومات البوت* 」⊱━━╭
 │✫ -  .المحظورين
 │✫ -  .المطور
 │✫ -  .سرعه
@@ -12,7 +11,7 @@ let lkr = `
 │✫ -  .لسته
 │✫ -  .معلومات
 ╯━━━━━━━━━━━━━━━━━╰`
-await conn.sendButton2(m.chat, lkr, mssg.ig, pp, rcanal, [
+await conn.sendButton2(m.chat, lkr, mssg.ig, pp, [
     ['القائمة', `${usedPrefix}تست`],
   ], null, [['قناة البوت', `${fgcanal}`]], m,)
 m.react(done)
