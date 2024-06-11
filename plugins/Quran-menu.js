@@ -1,6 +1,8 @@
 let handler = async (m, { conn, usedPrefix, command}) => {
+let users = participants.map(u => conn.decodeJid(u.id))
 let who = m.quoted ? m.quoted.sender : m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
 if (!(who in global.db.data.users)) throw `✳️ The user is not found in my database`
+let { name } = global.db.data.users[who]; // تعريف المتغير name من قاعدة البيانات
 let pp = './src/quran.jpg'
 let more = String.fromCharCode(8206)
 let readMore = more.repeat(850) 
@@ -129,7 +131,7 @@ let lkr = `
   ❀° ───•••──┄┄──•••───╭
     *♥️القـــــــــرآن الكـــريــــــم♥*
   ╯───•••──┄┄──•••─── °❀`
-conn.sendFile(m.chat, pp, 'perfil.jpg', lkr, m, null, rpig, true, { mentions: [who] })
+conn.sendFile(m.chat, pp, 'perfil.jpg', lkr, m, null, rpig, true, { mentions: [name] })
 m.react(done)
 }
 handler.help = ['قرآن']
