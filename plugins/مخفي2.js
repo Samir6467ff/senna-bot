@@ -53,7 +53,7 @@ let handler = async (m, { conn, text, participants, isOwner, isAdmin }) => {
                     isForwarded: true,
                     forwardedNewsletterMessageInfo: {
                         newsletterJid: '120363272493503323@newsletter',
-                        newsletterName: global.author,
+                        newsletterName: global.packname,
                         serverMessageId: -1
                     }
                 }
@@ -70,7 +70,7 @@ let handler = async (m, { conn, text, participants, isOwner, isAdmin }) => {
                     isForwarded: true,
                     forwardedNewsletterMessageInfo: {
                         newsletterJid: '120363272493503323@newsletter',
-                        newsletterName: global.author,
+                        newsletterName: global.packname,
                         serverMessageId: -1
                     }
                 }
