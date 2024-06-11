@@ -2,6 +2,12 @@
 import fetch from 'node-fetch';
 export async function before(m, { conn, text, participants }) {
    let users = participants.map(u => conn.decodeJid(u.id))
+   let q = m.quoted ? m.quoted : m || m.text || m.sender
+   let c = m.quoted ? await m.getQuotedObj() : m.msg || m.text || m.sender
+   let messageType = m.quoted ? q.mtype : 'extendedTextMessage'
+   let messageContent = m.quoted ? c.message[q.mtype] ?? {} : { text: '' || c }
+   let who = m.quoted ? m.quoted.sender : m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender; // تعريف المتغير who
+
    let pp = await this.profilePictureUrl(m.sender, 'image').catch(_ => 'https://telegra.ph/file/11d8f4ee53b8dd9fe80c6.jpg');
 
   let nam = "✨  𝑴𝒊𝒓𝒛𝒂 𝑩𝒐𝒕  ✨"
