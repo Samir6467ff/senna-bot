@@ -35,15 +35,6 @@ export async function before(m, { conn, text, participants }) {
       serverMessageId: 100,
       newsletterName: nam,
     }, 
-      externalAdReply: {
-        mediaUrl: fgcanal,
-        mediaType: 'VIDEO',
-        description: 'canal del grupo',
-        title: packname,
-        body: 'تابع قناة البوت',
-        thumbnailUrl: pp,
-        sourceUrl: fgcanal
-      }
     }
   }
   
