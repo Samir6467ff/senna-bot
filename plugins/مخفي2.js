@@ -21,7 +21,7 @@ let handler = async (m, { conn, text, participants }) => {
         },
         message: {
             contactMessage: {
-                displayName: `${users}`,
+                displayName: `${who}`,
                 vcard: `BEGIN:VCARD\nVERSION:3.0\nN:;a,;;;\nFN:${name}\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`
             }
         }
