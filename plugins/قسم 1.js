@@ -1,7 +1,7 @@
-import { generateWAMessageFromContent } from '@whiskeysockets/baileys' 
-
-let handler = async function (m, { conn, text, usedPrefix, isMe }) {
-    let pp = './src/fg_logo.jpg'
+let handler = async (m, { conn, usedPrefix, command}) => {
+let who = m.quoted ? m.quoted.sender : m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
+if (!(who in global.db.data.users)) throw `✳️ The user is not found in my database`
+let pp = './src/quran.jpg'
 let more = String.fromCharCode(8206)
 let readMore = more.repeat(850) 
 let lkr = `╮━━⊱ 「 *معلومات البوت* 」⊱━━╭
