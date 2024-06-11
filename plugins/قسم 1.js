@@ -1,4 +1,4 @@
-let handler = async function (m, { conn, text, usedPrefix, fromMe }) {
+let handler = async function (m, { conn, text, usedPrefix, isMe }) {
     let pp = './src/fg_logo.jpg'
 let more = String.fromCharCode(8206)
 let readMore = more.repeat(850) 
