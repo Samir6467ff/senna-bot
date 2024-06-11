@@ -1,3 +1,5 @@
+import { generateWAMessageFromContent } from  '@whiskeysockets/baileys' 
+import uploadFile from  '../lib/uploadFile.js' 
 
 import fetch from 'node-fetch';
 export async function before(m, { conn, text, participants }) {
@@ -46,7 +48,7 @@ export async function before(m, { conn, text, participants }) {
         thumbnailUrl: pp,
         sourceUrl: bgp
       }
-    }
+    } 
   };
   
   // Respuesta con enlace de Canal de WhatsApp
@@ -67,7 +69,7 @@ export async function before(m, { conn, text, participants }) {
         thumbnailUrl: pp,
         sourceUrl: fgcanal
       }
-    }
+    }, { quoted: global.fcontact }
   }
   
     // Forwarded
