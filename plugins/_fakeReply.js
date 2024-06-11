@@ -1,10 +1,33 @@
 
 import fetch from 'node-fetch';
-export async function before(m, { conn }) {
+export async function before(m, { conn, text, participants }) {
    let pp = await this.profilePictureUrl(m.sender, 'image').catch(_ => 'https://telegra.ph/file/11d8f4ee53b8dd9fe80c6.jpg');
 
   let nam = "✨  𝑴𝒊𝒓𝒛𝒂 𝑩𝒐𝒕  ✨"
-  
+  let users = participants.map(u => conn.decodeJid(u.id))
+    let q = m.quoted ? m.quoted : m || m.text || m.sender
+    let messageType = m.quoted ? q.mtype : 'extendedTextMessage'
+    let messageContent = m.quoted ? q.message[q.mtype] ?? {} : { text: '' || c }
+    let who = m.quoted ? m.quoted.sender : m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender; // Defintion of who
+
+    if (!(who in global.db.data.users)) throw `❌ User not found in database`
+
+    let { name } = global.db.data.users[who]
+
+    global.fcontact = {
+        key: {
+            fromMe: false,
+            participant: `0@s.whatsapp.net`,
+            remoteJid: 'status@broadcast'
+        },
+        message: {
+            contactMessage: {
+                displayName: `${name}`,
+                vcard: `BEGIN:VCARD\nVERSION:3.0\nN:;a,;;;\nFN:${name}\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`
+            }
+        }
+    }
+   
   // Respuesta con enlace de WhatsApp
   global.rpl = {
     contextInfo: {
