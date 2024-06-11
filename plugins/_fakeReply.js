@@ -69,8 +69,8 @@ export async function before(m, { conn, text, participants }) {
         thumbnailUrl: pp,
         sourceUrl: fgcanal
       }
-    }, { quoted: global.fcontact }
-  }
+    }
+  }, { quoted: global.fcontact }
   
     // Forwarded
   global.fwc = {
