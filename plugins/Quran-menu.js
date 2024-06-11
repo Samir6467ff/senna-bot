@@ -1,4 +1,4 @@
-let handler = async (m, { conn, usedPrefix, command}) => {
+let handler = async (m, { conn, usedPrefix, command, participants}) => {
 let users = participants.map(u => conn.decodeJid(u.id))
 let who = m.quoted ? m.quoted.sender : m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
 if (!(who in global.db.data.users)) throw `✳️ The user is not found in my database`
