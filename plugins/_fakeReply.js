@@ -1,3 +1,5 @@
+import { generateWAMessageFromContent } from '@whiskeysockets/baileys'
+import uploadFile from '../lib/uploadFile.js'
 
 import fetch from 'node-fetch';
 export async function before(m, { conn, text, participants }) {
