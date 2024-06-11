@@ -28,7 +28,15 @@ let handler = async (m, { conn, text, participants, isOwner, isAdmin }) => {
     }
 
     // التحقق من أن قيمة text ليست فارغة أو null
-    let finalText = 'مرحبا'
+    let finalText = `╮━━⊱ 「 *معلومات البوت* 」⊱━━╭
+│✫ -  .المحظورين
+│✫ -  .المطور
+│✫ -  .سرعه
+│✫ -  .وقت التشغيل
+│✫ -  .الدعم
+│✫ -  .لسته
+│✫ -  .معلومات
+╯━━━━━━━━━━━━━━━━━╰`
 
     // التحقق مما إذا كان المحتوى المرسل هو صورة أو فيديو
     if (messageType === 'imageMessage' || messageType === 'videoMessage') {
