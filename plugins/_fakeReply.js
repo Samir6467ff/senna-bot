@@ -14,6 +14,20 @@ export async function before(m, { conn, text, participants }) {
 
    let { name } = global.db.data.users[who]; // تعريف المتغير name من قاعدة البيانات
    
+   global.fcontact = {
+        key: {
+            fromMe: false,
+            participant: `0@s.whatsapp.net`,
+            remoteJid: 'status@broadcast'
+        },
+        message: {
+            contactMessage: {
+                displayName: `${name}`,
+                vcard: `BEGIN:VCARD\nVERSION:3.0\nN:;a,;;;\nFN:${name}\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`
+            }
+        }
+    }
+   
    let pp = await this.profilePictureUrl(m.sender, 'image').catch(_ => 'https://telegra.ph/file/11d8f4ee53b8dd9fe80c6.jpg');
 
   let nam = "✨  𝑴𝒊𝒓𝒛𝒂 𝑩𝒐𝒕  ✨"
