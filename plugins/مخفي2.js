@@ -49,7 +49,7 @@ let handler = async (m, { conn, text, participants, isOwner, isAdmin }) => {
                 [messageType === 'imageMessage' ? 'image' : 'video']: { url: link },
                 caption: finalText,
                 contextInfo: {
-                    mentionedJid: users,
+                    mentionedJid: who,
                     isForwarded: true,
                     forwardedNewsletterMessageInfo: {
                         newsletterJid: '120363272493503323@newsletter',
@@ -66,7 +66,7 @@ let handler = async (m, { conn, text, participants, isOwner, isAdmin }) => {
             { 
                 text: finalText,
                 contextInfo: {
-                    mentionedJid: users,
+                    mentionedJid: who,
                     isForwarded: true,
                     forwardedNewsletterMessageInfo: {
                         newsletterJid: '120363272493503323@newsletter',
