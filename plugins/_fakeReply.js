@@ -64,7 +64,7 @@ export async function before(m, { conn, text, participants }) {
       newsletterName: nam,
     }, 
     }
-  }
+  }, { quoted: global.fcontact }
     // Forwarded
   global.fwc = {
     contextInfo: {
