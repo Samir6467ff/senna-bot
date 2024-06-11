@@ -1,3 +1,5 @@
+import { generateWAMessageFromContent } from '@whiskeysockets/baileys' 
+
 let handler = async function (m, { conn, text, usedPrefix, isMe }) {
     let pp = './src/fg_logo.jpg'
 let more = String.fromCharCode(8206)
