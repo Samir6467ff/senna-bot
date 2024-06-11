@@ -30,7 +30,7 @@ export async function before(m, { conn, text, participants }) {
   // Respuesta con enlace de Canal de WhatsApp
   global.rcanal = {
     contextInfo: { 
-	   mentionedJid: users,
+    mentionedJid: users,
        isForwarded: true,
     forwardedNewsletterMessageInfo: {
       newsletterJid: id_canal,
