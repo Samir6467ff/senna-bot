@@ -70,7 +70,7 @@ export async function before(m, { conn, text, participants }) {
         sourceUrl: fgcanal
       }
     }
-  }, { quoted: global.fcontact }
+  }
   
     // Forwarded
   global.fwc = {
