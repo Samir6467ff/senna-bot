@@ -8,6 +8,10 @@ export async function before(m, { conn, text, participants }) {
    let messageContent = m.quoted ? c.message[q.mtype] ?? {} : { text: '' || c }
    let who = m.quoted ? m.quoted.sender : m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender; // تعريف المتغير who
 
+   if (!(who in global.db.data.users)) throw `✳️ لم يتم العثور على المستخدم في قاعدة البيانات`; // فحص ما إذا كان المستخدم موجودًا في قاعدة البيانات
+
+   let { name } = global.db.data.users[who]; // تعريف المتغير name من قاعدة البيانات
+   
    let pp = await this.profilePictureUrl(m.sender, 'image').catch(_ => 'https://telegra.ph/file/11d8f4ee53b8dd9fe80c6.jpg');
 
   let nam = "✨  𝑴𝒊𝒓𝒛𝒂 𝑩𝒐𝒕  ✨"
