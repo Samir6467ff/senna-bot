@@ -44,8 +44,8 @@ let handler = async (m, { conn, text, participants, isOwner, isAdmin }) => {
                     mentionedJid: users,
                     isForwarded: true,
                     forwardedNewsletterMessageInfo: {
-                        newsletterJid: id_canal,
-                        newsletterName: 𝑴𝒊𝒓𝒛𝒂 𝑩𝒐𝒕,
+                        newsletterJid: '120363272493503323@newsletter',
+                        newsletterName: global.author,
                         serverMessageId: -1
                     }
                 }
@@ -61,8 +61,8 @@ let handler = async (m, { conn, text, participants, isOwner, isAdmin }) => {
                     mentionedJid: users,
                     isForwarded: true,
                     forwardedNewsletterMessageInfo: {
-                        newsletterJid: id_canal,
-                        newsletterName: 𝑴𝒊𝒓𝒛𝒂 𝑩𝒐𝒕,
+                        newsletterJid: '120363272493503323@newsletter',
+                        newsletterName: global.author,
                         serverMessageId: -1
                     }
                 }
