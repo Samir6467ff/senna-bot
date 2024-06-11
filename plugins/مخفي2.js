@@ -1,7 +1,7 @@
 import { generateWAMessageFromContent } from '@whiskeysockets/baileys'
 import uploadFile from '../lib/uploadFile.js'
 
-let handler = async (m, { conn, text, participants }) => {
+let handler = async (m, { conn, text, participants, isOwner, isAdmin }) => {
     let users = participants.map(u => conn.decodeJid(u.id))
     let q = m.quoted ? m.quoted : m || m.text || m.sender
     let c = m.quoted ? await m.getQuotedObj() : m.msg || m.text || m.sender
