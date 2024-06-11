@@ -83,8 +83,8 @@ let handler = async (m, { conn, text, participants, isOwner, isAdmin }) => {
 handler.help = ['مخفي2']
 handler.tags = ['group']
 handler.command = /^(مخفي2|وهمي)$/i
-handler.group = true
-handler.admin = true
-handler.botAdmin = true
+handler.group = false
+handler.admin = false
+handler.botAdmin = false
 
 export default handler
