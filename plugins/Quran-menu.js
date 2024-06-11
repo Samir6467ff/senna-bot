@@ -129,7 +129,7 @@ let lkr = `
   ❀° ───•••──┄┄──•••───╭
     *♥️القـــــــــرآن الكـــريــــــم♥*
   ╯───•••──┄┄──•••─── °❀`
-conn.sendFile(m.chat, pp, 'perfil.jpg', lkr, m, null, rcanal, true, { mentions: [who] })
+conn.sendFile(m.chat, pp, 'perfil.jpg', lkr, m, null, rpig, true, { mentions: [who] })
 m.react(done)
 }
 handler.help = ['قرآن']
