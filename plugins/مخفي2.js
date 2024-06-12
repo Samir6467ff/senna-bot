@@ -12,7 +12,7 @@ let handler = async (m, { conn, text, participants, isOwner, isAdmin }) => {
     if (!(who in global.db.data.users)) throw `✳️ لم يتم العثور على المستخدم في قاعدة البيانات`; // فحص ما إذا كان المستخدم موجودًا في قاعدة البيانات
 
     let { name } = global.db.data.users[who]; // تعريف المتغير name من قاعدة البيانات
-    let pp = "https://telegra.ph/file/11d8f4ee53b8dd9fe80c6.jpg";
+    let pp = 'https://telegra.ph/file/11d8f4ee53b8dd9fe80c6.jpg'
     m.react('📚')
     global.fcontact = {
         key: {
