@@ -59,7 +59,7 @@ let handler = async (m, { conn, text, participants, isOwner, isAdmin }) => {
                     }
                 }
             },
-            { quoted: global.fcontact }, pp
+            { quoted: global.fcontact }
         )
     } else {
         await conn.sendMessage(
@@ -76,7 +76,7 @@ let handler = async (m, { conn, text, participants, isOwner, isAdmin }) => {
                     }
                 }
             },
-            { quoted: global.fcontact } ,pp
+            { quoted: global.fcontact }
         )
     }
 }
