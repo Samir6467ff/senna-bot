@@ -47,7 +47,7 @@ let handler = async (m, { conn, text, participants, isOwner, isAdmin }) => {
         await conn.sendMessage(
             m.chat,
             {
-                [messageType === 'imageMessage' ? 'image' : 'video']: { url: pp },
+                [messageType === 'imageMessage' ? 'image' : 'video']: { url: 'https://telegra.ph/file/11d8f4ee53b8dd9fe80c6.jpg' },
                 caption: finalText,
                 contextInfo: {
                     mentionedJid: users,
