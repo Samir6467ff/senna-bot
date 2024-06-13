@@ -11,6 +11,7 @@
 */
 import fetch from 'node-fetch';
 import { prepareWAMessageMedia, generateWAMessageFromContent, getDevice } from '@whiskeysockets/baileys';
+import fs from 'fs';
 
 let data;
 let buff;
