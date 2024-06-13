@@ -1,4 +1,4 @@
-import fs from 'fs'
+import fs from 'fs';
 import fetch from 'node-fetch';
 import { prepareWAMessageMedia, generateWAMessageFromContent, getDevice } from '@whiskeysockets/baileys';
 
