@@ -22,7 +22,7 @@ const { say } = cfonts
 const rl = createInterface(process.stdin, process.stdout)
 
 const app = express()
-const port = process.env.PORT || 10000;
+const port = process.env.PORT || 8080;
 
 say('Senna FG98', {
   font: 'pallet',
