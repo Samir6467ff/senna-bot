@@ -29,7 +29,8 @@ let handler = async (m, { conn, text, participants, isOwner, isAdmin }) => {
     }
 
     // التحقق من أن قيمة text ليست فارغة أو null
-    let finalText = `╮━━⊱ 「 *معلومات البوت* 」⊱━━╭
+    let finalText = ``📜‌ قسم المعلومات`
+╮━━⊱ 「 *معلومات البوت* 」⊱━━╭
 │✫ -  .المحظورين
 │✫ -  .المطور
 │✫ -  .سرعه
