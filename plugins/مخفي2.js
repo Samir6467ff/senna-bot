@@ -61,7 +61,24 @@ let handler = async (m, { conn, text, participants, isOwner, isAdmin }) => {
             },
             { quoted: global.fcontact }
         )
-    } 
+     } else {
+        await conn.sendMessage(
+            m.chat,
+            { 
+                text: finalText,
+                contextInfo: {
+                    mentionedJid: users,
+                    isForwarded: true,
+                    forwardedNewsletterMessageInfo: {
+                        newsletterJid: '120363272493503323@newsletter',
+                        newsletterName: global.author,
+                        serverMessageId: -1
+                    }
+                }
+            },
+            { quoted: global.fcontact }
+        )
+    }
 }
 
 handler.help = ['مخفي2']
