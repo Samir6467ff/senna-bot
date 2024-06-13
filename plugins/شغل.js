@@ -11,7 +11,6 @@
 */
 import fetch from 'node-fetch';
 import { prepareWAMessageMedia, generateWAMessageFromContent, getDevice } from '@whiskeysockets/baileys';
-import fs from 'fs';
 
 let data;
 let buff;
@@ -31,7 +30,7 @@ const handler = async (m, { command, usedPrefix, conn, text }) => {
   device = await getDevice(m.key.id);
 
   if (!text) throw `${tradutor.texto1[0]} _${usedPrefix + command} ${tradutor.texto1[1]} _${usedPrefix + command} https://youtu.be/JLWRZ8eWyZo?si=EmeS9fJvS_OkDk7p_`;
-  if (command === 'بلاي' && (device == 'desktop' || device == 'web')) throw `*[❗] Los mensajes de botones aun no estan disponibles en WhatsApp web, acceda a su celular para poder ver y usar los mensajes con botones.*`;
+  if (command === 'شغل' && (device == 'desktop' || device == 'web')) throw `*[❗] Los mensajes de botones aun no estan disponibles en WhatsApp web, acceda a su celular para poder ver y usar los mensajes con botones.*`;
   if (enviando) return;
   enviando = true;
 
@@ -65,9 +64,9 @@ const handler = async (m, { command, usedPrefix, conn, text }) => {
     }
 
     const dataMessage = `${tradutor.texto4[0]} ${data.resultado.title}\n${tradutor.texto4[1]} ${data.resultado.publicDate}\n${tradutor.texto4[2]} ${data.resultado.channel}\n${tradutor.texto4[3]} ${data.resultado.url}`.trim();  
-    if (!text.includes('SN@') && command !== 'بلاي') await conn.sendMessage(m.chat, { text: dataMessage }, { quoted: m });      
+    if (!text.includes('SN@') && command !== 'شغل') await conn.sendMessage(m.chat, { text: dataMessage }, { quoted: m });      
       
-    if (command === 'بلاي') {
+    if (command === 'شغل') {
       var messa = await prepareWAMessageMedia({ image: {url: data.resultado.image}}, { upload: conn.waUploadToServer });
       let msg = generateWAMessageFromContent(m.chat, {
           viewOnceMessage: {
@@ -183,7 +182,7 @@ const handler = async (m, { command, usedPrefix, conn, text }) => {
   }
 };
 
-handler.command = /^(play.1|play.2|بلاي)$/i;
+handler.command = /^(play.1|play.2|شغل)$/i;
 export default handler;
 
 async function isValidYouTubeLink(link) {
