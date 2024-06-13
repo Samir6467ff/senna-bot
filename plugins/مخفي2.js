@@ -13,7 +13,7 @@ let handler = async (m, { conn, text, participants, isOwner, isAdmin }) => {
 
     let { name } = global.db.data.users[who]; // تعريف المتغير name من قاعدة البيانات
     let pp =  'https://telegra.ph/file/11d8f4ee53b8dd9fe80c6.jpg' 
-    m.react( 📚 )
+    m.react( '📚' )
     global.fcontact = {
         key: {
             fromMe: false,
