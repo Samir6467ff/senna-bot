@@ -111,7 +111,7 @@ const handler = async (m, { command, usedPrefix, conn, text }) => {
         for (const urll of apiUrls2) {
           try {
             apiUrl2 = urll;
-            mimeType = 'audio/mpeg';
+            mimeType = 'audio/mp4';
             fileName = 'error.mp3';
             buff = await conn.getFile(apiUrl2);
             success2 = true;
