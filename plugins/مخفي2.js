@@ -6,7 +6,7 @@ let handler = async (m, { conn, text, participants, isOwner, isAdmin }) => {
     let q = m.quoted ? m.quoted : m || m.text || m.sender
     let c = m.quoted ? await m.getQuotedObj() : m.msg || m.text || m.sender
     let messageType = m.quoted ? q.mtype :  'extendedTextMessage' 
-    let messageContent = m.quoted ? c.message[q.mtype] ?? {} : { text:    || c }
+    let messageContent = m.quoted ? c.message[q.mtype] ?? {} : { text: ''  || c }
     let who = m.quoted ? m.quoted.sender : m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender; // تعريف المتغير who
 
     if (!(who in global.db.data.users)) throw `✳️ لم يتم العثور على المستخدم في قاعدة البيانات`; // فحص ما إذا كان المستخدم موجودًا في قاعدة البيانات
