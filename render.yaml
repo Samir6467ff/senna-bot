@@ -1,0 +1,12 @@
+# Exported from Render on 2024-06-18T10:58:35Z
+services:
+- type: web
+  name: senna-bot
+  runtime: docker
+  repo: https://github.com/hamzawy834/senna-bot
+  plan: free
+  region: oregon
+  dockerContext: .
+  dockerfilePath: ./Dockerfile
+  pullRequestPreviewsEnabled: true
+version: "1"
